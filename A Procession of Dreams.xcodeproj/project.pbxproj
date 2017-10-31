@@ -1,0 +1,843 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 47;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		141EAD1A1C0D663800029CAA /* TimerUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141EAD191C0D663800029CAA /* TimerUtil.swift */; };
+		142EA49C1BE09AAF00C72543 /* SongList.json in Resources */ = {isa = PBXBuildFile; fileRef = 142EA49B1BE09AAF00C72543 /* SongList.json */; };
+		143E1FA61C25D271005BCF0C /* ImageDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143E1FA51C25D271005BCF0C /* ImageDescriptor.swift */; };
+		143E1FAD1C265883005BCF0C /* john_summeroflove2009_med.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 143E1FAB1C265883005BCF0C /* john_summeroflove2009_med.jpg */; };
+		143E1FAE1C265883005BCF0C /* band_sol1_med.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 143E1FAC1C265883005BCF0C /* band_sol1_med.jpg */; };
+		143E1FB31C265A2E005BCF0C /* waldorf_med.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 143E1FAF1C265A2E005BCF0C /* waldorf_med.jpg */; };
+		143E1FB41C265A2E005BCF0C /* phil_and_clown_med.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 143E1FB01C265A2E005BCF0C /* phil_and_clown_med.jpg */; };
+		143E1FB51C265A2E005BCF0C /* coliseum_backstage_med.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 143E1FB11C265A2E005BCF0C /* coliseum_backstage_med.jpg */; };
+		143E1FB61C265A2E005BCF0C /* band_sol2_med.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 143E1FB21C265A2E005BCF0C /* band_sol2_med.jpg */; };
+		143E1FC11C271329005BCF0C /* ubc_sub_med.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 143E1FB71C271329005BCF0C /* ubc_sub_med.jpg */; };
+		143E1FC21C271329005BCF0C /* ron_townpump1988_med.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 143E1FB81C271329005BCF0C /* ron_townpump1988_med.jpg */; };
+		143E1FC31C271329005BCF0C /* ron_summeroflove2009_med.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 143E1FB91C271329005BCF0C /* ron_summeroflove2009_med.jpg */; };
+		143E1FC41C271329005BCF0C /* phil_townpump1988_med.png in Resources */ = {isa = PBXBuildFile; fileRef = 143E1FBA1C271329005BCF0C /* phil_townpump1988_med.png */; };
+		143E1FC51C271329005BCF0C /* phil_summeroflove2009_med.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 143E1FBB1C271329005BCF0C /* phil_summeroflove2009_med.jpg */; };
+		143E1FC61C271329005BCF0C /* john_townpump1988_med.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 143E1FBC1C271329005BCF0C /* john_townpump1988_med.jpg */; };
+		143E1FC71C271329005BCF0C /* gord_summeroflove2009_med.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 143E1FBD1C271329005BCF0C /* gord_summeroflove2009_med.jpg */; };
+		143E1FC81C271329005BCF0C /* full_body_white2.png in Resources */ = {isa = PBXBuildFile; fileRef = 143E1FBE1C271329005BCF0C /* full_body_white2.png */; };
+		143E1FC91C271329005BCF0C /* bill_summeroflove2009_med.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 143E1FBF1C271329005BCF0C /* bill_summeroflove2009_med.jpg */; };
+		143E1FCA1C271329005BCF0C /* band_sol3_med.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 143E1FC01C271329005BCF0C /* band_sol3_med.jpg */; };
+		143E1FCE1C271500005BCF0C /* summeroflove_poster_med.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 143E1FCB1C271500005BCF0C /* summeroflove_poster_med.jpg */; };
+		143E1FCF1C271500005BCF0C /* bill_townpump1988_med.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 143E1FCC1C271500005BCF0C /* bill_townpump1988_med.jpg */; };
+		143E1FD01C271500005BCF0C /* band_sol4_med.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 143E1FCD1C271500005BCF0C /* band_sol4_med.jpg */; };
+		143E1FD21C27547A005BCF0C /* back_med.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 143E1FD11C27547A005BCF0C /* back_med.jpg */; };
+		14508D6B1BDEF3DE00EED7C3 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14508D6A1BDEF3DE00EED7C3 /* MasterViewController.swift */; };
+		14508D6F1BDF121C00EED7C3 /* SongContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14508D6E1BDF121C00EED7C3 /* SongContentViewController.swift */; };
+		145507371C1E2320007D6384 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145507361C1E2320007D6384 /* WebViewController.swift */; };
+		145507391C1E42FB007D6384 /* UrlLinksDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145507381C1E42FB007D6384 /* UrlLinksDescriptor.swift */; };
+		145AE35D1C225F5F008BEDFE /* CarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145AE35C1C225F5F008BEDFE /* CarouselViewController.swift */; };
+		1476533D1BC1C21200280D36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1476533C1BC1C21200280D36 /* AppDelegate.swift */; };
+		147653441BC1C21200280D36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 147653431BC1C21200280D36 /* Assets.xcassets */; };
+		147653471BC1C21200280D36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 147653451BC1C21200280D36 /* LaunchScreen.storyboard */; };
+		147653521BC1C21200280D36 /* A_Procession_of_DreamsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 147653511BC1C21200280D36 /* A_Procession_of_DreamsTests.swift */; };
+		1476535D1BC1C21200280D36 /* A_Procession_of_DreamsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1476535C1BC1C21200280D36 /* A_Procession_of_DreamsUITests.swift */; };
+		14809ED01C23CC92008D0C0B /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14809ECF1C23CC92008D0C0B /* MyCell.swift */; };
+		1487AB3A1C06D25900422602 /* SongDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1487AB391C06D25900422602 /* SongDescriptor.swift */; };
+		1487AB501C06D36300422602 /* song4.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1487AB491C06D36300422602 /* song4.txt */; };
+		1487AB511C06D36300422602 /* song1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1487AB4A1C06D36300422602 /* song1.txt */; };
+		1487AB521C06D36300422602 /* song2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1487AB4B1C06D36300422602 /* song2.txt */; };
+		1487AB531C06D36300422602 /* song3.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1487AB4C1C06D36300422602 /* song3.txt */; };
+		1487AB541C06D36300422602 /* song0.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1487AB4D1C06D36300422602 /* song0.txt */; };
+		14A626251C2F2D8400C123C6 /* apod_bg_trans.png in Resources */ = {isa = PBXBuildFile; fileRef = 14A626241C2F2D8400C123C6 /* apod_bg_trans.png */; };
+		14A626291C2F968400C123C6 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14A626281C2F968400C123C6 /* MessageUI.framework */; };
+		14B8C6051BE66DF300EAF296 /* apod_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 14B8C5A11BE66DF300EAF296 /* apod_bg.png */; };
+		14B8C6061BE66DF300EAF296 /* apod_cover_ico.png in Resources */ = {isa = PBXBuildFile; fileRef = 14B8C5A21BE66DF300EAF296 /* apod_cover_ico.png */; };
+		14B8C6071BE66DF300EAF296 /* apod_cover_sq.png in Resources */ = {isa = PBXBuildFile; fileRef = 14B8C5A31BE66DF300EAF296 /* apod_cover_sq.png */; };
+		14B8C6081BE66DF300EAF296 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = 14B8C5A51BE66DF300EAF296 /* Contents.json */; };
+		14B8C6091BE66DF300EAF296 /* arm_image_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 14B8C5A61BE66DF300EAF296 /* arm_image_white.png */; };
+		14B8C6211BE66DF300EAF296 /* corsage_more.png in Resources */ = {isa = PBXBuildFile; fileRef = 14B8C5BE1BE66DF300EAF296 /* corsage_more.png */; };
+		14B8C6221BE66DF300EAF296 /* corsage_thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 14B8C5BF1BE66DF300EAF296 /* corsage_thumb.png */; };
+		14B8C6231BE66DF300EAF296 /* corsage_title_on_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 14B8C5C01BE66DF300EAF296 /* corsage_title_on_white.png */; };
+		14B8C6261BE66DF300EAF296 /* cover.png in Resources */ = {isa = PBXBuildFile; fileRef = 14B8C5C31BE66DF300EAF296 /* cover.png */; };
+		14B8C62A1BE66DF300EAF296 /* full_body_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 14B8C5C71BE66DF300EAF296 /* full_body_white.png */; };
+		14B8C62E1BE66DF300EAF296 /* head_image_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 14B8C5CB1BE66DF300EAF296 /* head_image_white.png */; };
+		14B8C6301BE66DF300EAF296 /* ic_apod.png in Resources */ = {isa = PBXBuildFile; fileRef = 14B8C5CD1BE66DF300EAF296 /* ic_apod.png */; };
+		14B8C6361BE66DF300EAF296 /* leg_image_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 14B8C5D31BE66DF300EAF296 /* leg_image_white.png */; };
+		14B8C6371BE66DF300EAF296 /* leg_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 14B8C5D41BE66DF300EAF296 /* leg_image.png */; };
+		14B8C6391BE66DF300EAF296 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 14B8C5D61BE66DF300EAF296 /* pause.png */; };
+		14B8C6421BE66DF300EAF296 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 14B8C5DF1BE66DF300EAF296 /* play.png */; };
+		14B8C6591BE66DF300EAF296 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 14B8C5F61BE66DF300EAF296 /* splash.png */; };
+		14B8C65B1BE66DF300EAF296 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = 14B8C5F81BE66DF300EAF296 /* stop.png */; };
+		14B8C65E1BE66DF300EAF296 /* thumb_img.png in Resources */ = {isa = PBXBuildFile; fileRef = 14B8C5FB1BE66DF300EAF296 /* thumb_img.png */; };
+		14B8C65F1BE66DF300EAF296 /* thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 14B8C5FC1BE66DF300EAF296 /* thumb.png */; };
+		14B8C6601BE66DF300EAF296 /* top_half_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 14B8C5FD1BE66DF300EAF296 /* top_half_white.png */; };
+		14B8C6621BE66DF300EAF296 /* tree.png in Resources */ = {isa = PBXBuildFile; fileRef = 14B8C5FF1BE66DF300EAF296 /* tree.png */; };
+		14C272F81BF7B2FB001DF1F7 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14C272F71BF7B2FB001DF1F7 /* AVKit.framework */; };
+		14C273001BF87227001DF1F7 /* coda.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 14C272FA1BF87227001DF1F7 /* coda.mp3 */; };
+		14C273011BF87227001DF1F7 /* heaven.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 14C272FB1BF87227001DF1F7 /* heaven.mp3 */; };
+		14C273021BF87227001DF1F7 /* leave.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 14C272FC1BF87227001DF1F7 /* leave.mp3 */; };
+		14C273031BF87227001DF1F7 /* life.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 14C272FD1BF87227001DF1F7 /* life.mp3 */; };
+		14C273041BF87227001DF1F7 /* slips.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 14C272FE1BF87227001DF1F7 /* slips.mp3 */; };
+		14C273051BF87227001DF1F7 /* slips2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 14C272FF1BF87227001DF1F7 /* slips2.mp3 */; };
+		14C8FF511C32D6620028B2A6 /* Icon-83.5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14C8FF501C32D6620028B2A6 /* Icon-83.5@2x.png */; };
+		14CE7D2B1BF1B89000779BE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14CE7D2A1BF1B89000779BE4 /* Main.storyboard */; };
+		14EFBAA21C28FFA80011C7D6 /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14EFBAA11C28FFA80011C7D6 /* Icon-60@2x.png */; };
+		14EFBAA51C2904470011C7D6 /* Icon-76@x2.png in Resources */ = {isa = PBXBuildFile; fileRef = 14EFBAA31C2904470011C7D6 /* Icon-76@x2.png */; };
+		14EFBAA61C2904470011C7D6 /* Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 14EFBAA41C2904470011C7D6 /* Icon-76.png */; };
+		2AFEE07C1FA55CF20075A02F /* Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFEE07B1FA55CF20075A02F /* Consts.swift */; };
+		2AFEE0871FA6C8D20075A02F /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFEE0861FA6C8D20075A02F /* CollectionViewCell.swift */; };
+		2AFEE0891FA6D4760075A02F /* LyricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFEE0881FA6D4760075A02F /* LyricsView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1476534E1BC1C21200280D36 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 147653311BC1C21200280D36 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 147653381BC1C21200280D36;
+			remoteInfo = "A Procession of Dreams";
+		};
+		147653591BC1C21200280D36 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 147653311BC1C21200280D36 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 147653381BC1C21200280D36;
+			remoteInfo = "A Procession of Dreams";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		141EAD191C0D663800029CAA /* TimerUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerUtil.swift; sourceTree = "<group>"; };
+		142EA49B1BE09AAF00C72543 /* SongList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SongList.json; sourceTree = "<group>"; };
+		143E1FA51C25D271005BCF0C /* ImageDescriptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDescriptor.swift; sourceTree = "<group>"; };
+		143E1FAB1C265883005BCF0C /* john_summeroflove2009_med.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = john_summeroflove2009_med.jpg; path = Assets.xcassets/john_summeroflove2009_med.jpg; sourceTree = "<group>"; };
+		143E1FAC1C265883005BCF0C /* band_sol1_med.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = band_sol1_med.jpg; path = Assets.xcassets/band_sol1_med.jpg; sourceTree = "<group>"; };
+		143E1FAF1C265A2E005BCF0C /* waldorf_med.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = waldorf_med.jpg; path = Assets.xcassets/waldorf_med.jpg; sourceTree = "<group>"; };
+		143E1FB01C265A2E005BCF0C /* phil_and_clown_med.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = phil_and_clown_med.jpg; path = Assets.xcassets/phil_and_clown_med.jpg; sourceTree = "<group>"; };
+		143E1FB11C265A2E005BCF0C /* coliseum_backstage_med.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = coliseum_backstage_med.jpg; path = Assets.xcassets/coliseum_backstage_med.jpg; sourceTree = "<group>"; };
+		143E1FB21C265A2E005BCF0C /* band_sol2_med.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = band_sol2_med.jpg; path = Assets.xcassets/band_sol2_med.jpg; sourceTree = "<group>"; };
+		143E1FB71C271329005BCF0C /* ubc_sub_med.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = ubc_sub_med.jpg; path = Assets.xcassets/ubc_sub_med.jpg; sourceTree = "<group>"; };
+		143E1FB81C271329005BCF0C /* ron_townpump1988_med.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = ron_townpump1988_med.jpg; path = Assets.xcassets/ron_townpump1988_med.jpg; sourceTree = "<group>"; };
+		143E1FB91C271329005BCF0C /* ron_summeroflove2009_med.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = ron_summeroflove2009_med.jpg; path = Assets.xcassets/ron_summeroflove2009_med.jpg; sourceTree = "<group>"; };
+		143E1FBA1C271329005BCF0C /* phil_townpump1988_med.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = phil_townpump1988_med.png; path = Assets.xcassets/phil_townpump1988_med.png; sourceTree = "<group>"; };
+		143E1FBB1C271329005BCF0C /* phil_summeroflove2009_med.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = phil_summeroflove2009_med.jpg; path = Assets.xcassets/phil_summeroflove2009_med.jpg; sourceTree = "<group>"; };
+		143E1FBC1C271329005BCF0C /* john_townpump1988_med.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = john_townpump1988_med.jpg; path = Assets.xcassets/john_townpump1988_med.jpg; sourceTree = "<group>"; };
+		143E1FBD1C271329005BCF0C /* gord_summeroflove2009_med.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = gord_summeroflove2009_med.jpg; path = Assets.xcassets/gord_summeroflove2009_med.jpg; sourceTree = "<group>"; };
+		143E1FBE1C271329005BCF0C /* full_body_white2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = full_body_white2.png; path = Assets.xcassets/full_body_white2.png; sourceTree = "<group>"; };
+		143E1FBF1C271329005BCF0C /* bill_summeroflove2009_med.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bill_summeroflove2009_med.jpg; path = Assets.xcassets/bill_summeroflove2009_med.jpg; sourceTree = "<group>"; };
+		143E1FC01C271329005BCF0C /* band_sol3_med.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = band_sol3_med.jpg; path = Assets.xcassets/band_sol3_med.jpg; sourceTree = "<group>"; };
+		143E1FCB1C271500005BCF0C /* summeroflove_poster_med.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = summeroflove_poster_med.jpg; path = Assets.xcassets/summeroflove_poster_med.jpg; sourceTree = "<group>"; };
+		143E1FCC1C271500005BCF0C /* bill_townpump1988_med.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bill_townpump1988_med.jpg; path = Assets.xcassets/bill_townpump1988_med.jpg; sourceTree = "<group>"; };
+		143E1FCD1C271500005BCF0C /* band_sol4_med.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = band_sol4_med.jpg; path = Assets.xcassets/band_sol4_med.jpg; sourceTree = "<group>"; };
+		143E1FD11C27547A005BCF0C /* back_med.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = back_med.jpg; path = Assets.xcassets/back_med.jpg; sourceTree = "<group>"; };
+		14508D6A1BDEF3DE00EED7C3 /* MasterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		14508D6E1BDF121C00EED7C3 /* SongContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongContentViewController.swift; sourceTree = "<group>"; };
+		145507361C1E2320007D6384 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		145507381C1E42FB007D6384 /* UrlLinksDescriptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlLinksDescriptor.swift; sourceTree = "<group>"; };
+		145AE35C1C225F5F008BEDFE /* CarouselViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarouselViewController.swift; sourceTree = "<group>"; };
+		1476533C1BC1C21200280D36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		147653431BC1C21200280D36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		147653461BC1C21200280D36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		147653481BC1C21200280D36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		147653511BC1C21200280D36 /* A_Procession_of_DreamsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = A_Procession_of_DreamsTests.swift; sourceTree = "<group>"; };
+		147653531BC1C21200280D36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1476535C1BC1C21200280D36 /* A_Procession_of_DreamsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = A_Procession_of_DreamsUITests.swift; sourceTree = "<group>"; };
+		1476535E1BC1C21200280D36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14809ECF1C23CC92008D0C0B /* MyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
+		1487AB391C06D25900422602 /* SongDescriptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongDescriptor.swift; sourceTree = "<group>"; };
+		1487AB491C06D36300422602 /* song4.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = song4.txt; sourceTree = "<group>"; };
+		1487AB4A1C06D36300422602 /* song1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = song1.txt; sourceTree = "<group>"; };
+		1487AB4B1C06D36300422602 /* song2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = song2.txt; sourceTree = "<group>"; };
+		1487AB4C1C06D36300422602 /* song3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = song3.txt; sourceTree = "<group>"; };
+		1487AB4D1C06D36300422602 /* song0.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = song0.txt; sourceTree = "<group>"; };
+		14A626241C2F2D8400C123C6 /* apod_bg_trans.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = apod_bg_trans.png; path = Assets.xcassets/apod_bg_trans.png; sourceTree = "<group>"; };
+		14A626281C2F968400C123C6 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		14B8C5A11BE66DF300EAF296 /* apod_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = apod_bg.png; path = Assets.xcassets/apod_bg.png; sourceTree = "<group>"; };
+		14B8C5A21BE66DF300EAF296 /* apod_cover_ico.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = apod_cover_ico.png; path = Assets.xcassets/apod_cover_ico.png; sourceTree = "<group>"; };
+		14B8C5A31BE66DF300EAF296 /* apod_cover_sq.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = apod_cover_sq.png; path = Assets.xcassets/apod_cover_sq.png; sourceTree = "<group>"; };
+		14B8C5A51BE66DF300EAF296 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Contents.json; sourceTree = "<group>"; };
+		14B8C5A61BE66DF300EAF296 /* arm_image_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = arm_image_white.png; path = Assets.xcassets/arm_image_white.png; sourceTree = "<group>"; };
+		14B8C5BE1BE66DF300EAF296 /* corsage_more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = corsage_more.png; path = Assets.xcassets/corsage_more.png; sourceTree = "<group>"; };
+		14B8C5BF1BE66DF300EAF296 /* corsage_thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = corsage_thumb.png; path = Assets.xcassets/corsage_thumb.png; sourceTree = "<group>"; };
+		14B8C5C01BE66DF300EAF296 /* corsage_title_on_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = corsage_title_on_white.png; path = Assets.xcassets/corsage_title_on_white.png; sourceTree = "<group>"; };
+		14B8C5C31BE66DF300EAF296 /* cover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cover.png; path = Assets.xcassets/cover.png; sourceTree = "<group>"; };
+		14B8C5C71BE66DF300EAF296 /* full_body_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = full_body_white.png; path = Assets.xcassets/full_body_white.png; sourceTree = "<group>"; };
+		14B8C5CB1BE66DF300EAF296 /* head_image_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = head_image_white.png; path = Assets.xcassets/head_image_white.png; sourceTree = "<group>"; };
+		14B8C5CD1BE66DF300EAF296 /* ic_apod.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_apod.png; path = ../ic_apod.png; sourceTree = "<group>"; };
+		14B8C5D31BE66DF300EAF296 /* leg_image_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = leg_image_white.png; path = Assets.xcassets/leg_image_white.png; sourceTree = "<group>"; };
+		14B8C5D41BE66DF300EAF296 /* leg_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = leg_image.png; path = Assets.xcassets/leg_image.png; sourceTree = "<group>"; };
+		14B8C5D61BE66DF300EAF296 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pause.png; path = Assets.xcassets/pause.png; sourceTree = "<group>"; };
+		14B8C5DF1BE66DF300EAF296 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = play.png; path = Assets.xcassets/play.png; sourceTree = "<group>"; };
+		14B8C5F61BE66DF300EAF296 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = splash.png; path = Assets.xcassets/splash.png; sourceTree = "<group>"; };
+		14B8C5F81BE66DF300EAF296 /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = stop.png; path = Assets.xcassets/stop.png; sourceTree = "<group>"; };
+		14B8C5FB1BE66DF300EAF296 /* thumb_img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = thumb_img.png; path = Assets.xcassets/thumb_img.png; sourceTree = "<group>"; };
+		14B8C5FC1BE66DF300EAF296 /* thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = thumb.png; path = Assets.xcassets/thumb.png; sourceTree = "<group>"; };
+		14B8C5FD1BE66DF300EAF296 /* top_half_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = top_half_white.png; path = Assets.xcassets/top_half_white.png; sourceTree = "<group>"; };
+		14B8C5FF1BE66DF300EAF296 /* tree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tree.png; path = Assets.xcassets/tree.png; sourceTree = "<group>"; };
+		14C272F71BF7B2FB001DF1F7 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		14C272FA1BF87227001DF1F7 /* coda.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = coda.mp3; path = Assets.xcassets/coda.mp3; sourceTree = "<group>"; };
+		14C272FB1BF87227001DF1F7 /* heaven.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = heaven.mp3; path = Assets.xcassets/heaven.mp3; sourceTree = "<group>"; };
+		14C272FC1BF87227001DF1F7 /* leave.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = leave.mp3; path = Assets.xcassets/leave.mp3; sourceTree = "<group>"; };
+		14C272FD1BF87227001DF1F7 /* life.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = life.mp3; path = Assets.xcassets/life.mp3; sourceTree = "<group>"; };
+		14C272FE1BF87227001DF1F7 /* slips.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = slips.mp3; path = Assets.xcassets/slips.mp3; sourceTree = "<group>"; };
+		14C272FF1BF87227001DF1F7 /* slips2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = slips2.mp3; path = Assets.xcassets/slips2.mp3; sourceTree = "<group>"; };
+		14C8FF501C32D6620028B2A6 /* Icon-83.5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-83.5@2x.png"; path = "Assets.xcassets/AppIcon.appiconset/Icon-83.5@2x.png"; sourceTree = "<group>"; };
+		14C8FF531C33033F0028B2A6 /* Corsage APoD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Corsage APoD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		14C8FF541C33033F0028B2A6 /* A Procession of DreamsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "A Procession of DreamsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		14C8FF551C33033F0028B2A6 /* A Procession of DreamsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "A Procession of DreamsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		14CE7D2A1BF1B89000779BE4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		14EFBAA11C28FFA80011C7D6 /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-60@2x.png"; path = "Assets.xcassets/Icon-60@2x.png"; sourceTree = "<group>"; };
+		14EFBAA31C2904470011C7D6 /* Icon-76@x2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-76@x2.png"; path = "Assets.xcassets/Icon-76@x2.png"; sourceTree = "<group>"; };
+		14EFBAA41C2904470011C7D6 /* Icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-76.png"; path = "Assets.xcassets/Icon-76.png"; sourceTree = "<group>"; };
+		2AFEE07B1FA55CF20075A02F /* Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consts.swift; sourceTree = "<group>"; };
+		2AFEE0861FA6C8D20075A02F /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		2AFEE0881FA6D4760075A02F /* LyricsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricsView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		147653361BC1C21200280D36 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14A626291C2F968400C123C6 /* MessageUI.framework in Frameworks */,
+				14C272F81BF7B2FB001DF1F7 /* AVKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1476534A1BC1C21200280D36 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		147653551BC1C21200280D36 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		147653301BC1C21200280D36 = {
+			isa = PBXGroup;
+			children = (
+				14A626281C2F968400C123C6 /* MessageUI.framework */,
+				14C272F71BF7B2FB001DF1F7 /* AVKit.framework */,
+				1476533B1BC1C21200280D36 /* A Procession of Dreams */,
+				147653501BC1C21200280D36 /* A Procession of DreamsTests */,
+				1476535B1BC1C21200280D36 /* A Procession of DreamsUITests */,
+				14C8FF531C33033F0028B2A6 /* Corsage APoD.app */,
+				14C8FF541C33033F0028B2A6 /* A Procession of DreamsTests.xctest */,
+				14C8FF551C33033F0028B2A6 /* A Procession of DreamsUITests.xctest */,
+			);
+			sourceTree = "<group>";
+		};
+		1476533B1BC1C21200280D36 /* A Procession of Dreams */ = {
+			isa = PBXGroup;
+			children = (
+				2AFEE07A1FA55CD80075A02F /* util */,
+				1487AB571C06D37500422602 /* textGroup */,
+				14C272F91BF871EA001DF1F7 /* songs */,
+				14B8C6671BE66E0400EAF296 /* images */,
+				142EA49B1BE09AAF00C72543 /* SongList.json */,
+				1476533C1BC1C21200280D36 /* AppDelegate.swift */,
+				147653431BC1C21200280D36 /* Assets.xcassets */,
+				14C8FF501C32D6620028B2A6 /* Icon-83.5@2x.png */,
+				14B8C5A41BE66DF300EAF296 /* AppIcon.appiconset */,
+				147653451BC1C21200280D36 /* LaunchScreen.storyboard */,
+				147653481BC1C21200280D36 /* Info.plist */,
+				14508D6A1BDEF3DE00EED7C3 /* MasterViewController.swift */,
+				14508D6E1BDF121C00EED7C3 /* SongContentViewController.swift */,
+				14CE7D2A1BF1B89000779BE4 /* Main.storyboard */,
+				1487AB391C06D25900422602 /* SongDescriptor.swift */,
+				141EAD191C0D663800029CAA /* TimerUtil.swift */,
+				145507361C1E2320007D6384 /* WebViewController.swift */,
+				145507381C1E42FB007D6384 /* UrlLinksDescriptor.swift */,
+				145AE35C1C225F5F008BEDFE /* CarouselViewController.swift */,
+				14809ECF1C23CC92008D0C0B /* MyCell.swift */,
+				143E1FA51C25D271005BCF0C /* ImageDescriptor.swift */,
+				2AFEE0861FA6C8D20075A02F /* CollectionViewCell.swift */,
+				2AFEE0881FA6D4760075A02F /* LyricsView.swift */,
+			);
+			path = "A Procession of Dreams";
+			sourceTree = "<group>";
+		};
+		147653501BC1C21200280D36 /* A Procession of DreamsTests */ = {
+			isa = PBXGroup;
+			children = (
+				147653511BC1C21200280D36 /* A_Procession_of_DreamsTests.swift */,
+				147653531BC1C21200280D36 /* Info.plist */,
+			);
+			path = "A Procession of DreamsTests";
+			sourceTree = "<group>";
+		};
+		1476535B1BC1C21200280D36 /* A Procession of DreamsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1476535C1BC1C21200280D36 /* A_Procession_of_DreamsUITests.swift */,
+				1476535E1BC1C21200280D36 /* Info.plist */,
+			);
+			path = "A Procession of DreamsUITests";
+			sourceTree = "<group>";
+		};
+		1487AB571C06D37500422602 /* textGroup */ = {
+			isa = PBXGroup;
+			children = (
+				1487AB491C06D36300422602 /* song4.txt */,
+				1487AB4A1C06D36300422602 /* song1.txt */,
+				1487AB4B1C06D36300422602 /* song2.txt */,
+				1487AB4C1C06D36300422602 /* song3.txt */,
+				1487AB4D1C06D36300422602 /* song0.txt */,
+			);
+			name = textGroup;
+			sourceTree = "<group>";
+		};
+		14B8C5A41BE66DF300EAF296 /* AppIcon.appiconset */ = {
+			isa = PBXGroup;
+			children = (
+				14B8C5CD1BE66DF300EAF296 /* ic_apod.png */,
+				14B8C5A51BE66DF300EAF296 /* Contents.json */,
+			);
+			name = AppIcon.appiconset;
+			path = Assets.xcassets/AppIcon.appiconset;
+			sourceTree = "<group>";
+		};
+		14B8C6671BE66E0400EAF296 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				14A626241C2F2D8400C123C6 /* apod_bg_trans.png */,
+				14EFBAA31C2904470011C7D6 /* Icon-76@x2.png */,
+				14EFBAA41C2904470011C7D6 /* Icon-76.png */,
+				14EFBAA11C28FFA80011C7D6 /* Icon-60@2x.png */,
+				143E1FD11C27547A005BCF0C /* back_med.jpg */,
+				143E1FCB1C271500005BCF0C /* summeroflove_poster_med.jpg */,
+				143E1FCC1C271500005BCF0C /* bill_townpump1988_med.jpg */,
+				143E1FCD1C271500005BCF0C /* band_sol4_med.jpg */,
+				143E1FB71C271329005BCF0C /* ubc_sub_med.jpg */,
+				143E1FB81C271329005BCF0C /* ron_townpump1988_med.jpg */,
+				143E1FB91C271329005BCF0C /* ron_summeroflove2009_med.jpg */,
+				143E1FBA1C271329005BCF0C /* phil_townpump1988_med.png */,
+				143E1FBB1C271329005BCF0C /* phil_summeroflove2009_med.jpg */,
+				143E1FBC1C271329005BCF0C /* john_townpump1988_med.jpg */,
+				143E1FBD1C271329005BCF0C /* gord_summeroflove2009_med.jpg */,
+				143E1FBE1C271329005BCF0C /* full_body_white2.png */,
+				143E1FBF1C271329005BCF0C /* bill_summeroflove2009_med.jpg */,
+				143E1FC01C271329005BCF0C /* band_sol3_med.jpg */,
+				143E1FAF1C265A2E005BCF0C /* waldorf_med.jpg */,
+				143E1FB01C265A2E005BCF0C /* phil_and_clown_med.jpg */,
+				143E1FB11C265A2E005BCF0C /* coliseum_backstage_med.jpg */,
+				143E1FB21C265A2E005BCF0C /* band_sol2_med.jpg */,
+				143E1FAB1C265883005BCF0C /* john_summeroflove2009_med.jpg */,
+				143E1FAC1C265883005BCF0C /* band_sol1_med.jpg */,
+				14B8C5A61BE66DF300EAF296 /* arm_image_white.png */,
+				14B8C5BE1BE66DF300EAF296 /* corsage_more.png */,
+				14B8C5BF1BE66DF300EAF296 /* corsage_thumb.png */,
+				14B8C5C01BE66DF300EAF296 /* corsage_title_on_white.png */,
+				14B8C5C31BE66DF300EAF296 /* cover.png */,
+				14B8C5C71BE66DF300EAF296 /* full_body_white.png */,
+				14B8C5CB1BE66DF300EAF296 /* head_image_white.png */,
+				14B8C5D31BE66DF300EAF296 /* leg_image_white.png */,
+				14B8C5D41BE66DF300EAF296 /* leg_image.png */,
+				14B8C5D61BE66DF300EAF296 /* pause.png */,
+				14B8C5DF1BE66DF300EAF296 /* play.png */,
+				14B8C5F61BE66DF300EAF296 /* splash.png */,
+				14B8C5F81BE66DF300EAF296 /* stop.png */,
+				14B8C5FB1BE66DF300EAF296 /* thumb_img.png */,
+				14B8C5FC1BE66DF300EAF296 /* thumb.png */,
+				14B8C5FD1BE66DF300EAF296 /* top_half_white.png */,
+				14B8C5FF1BE66DF300EAF296 /* tree.png */,
+				14B8C5A11BE66DF300EAF296 /* apod_bg.png */,
+				14B8C5A21BE66DF300EAF296 /* apod_cover_ico.png */,
+				14B8C5A31BE66DF300EAF296 /* apod_cover_sq.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		14C272F91BF871EA001DF1F7 /* songs */ = {
+			isa = PBXGroup;
+			children = (
+				14C272FA1BF87227001DF1F7 /* coda.mp3 */,
+				14C272FB1BF87227001DF1F7 /* heaven.mp3 */,
+				14C272FC1BF87227001DF1F7 /* leave.mp3 */,
+				14C272FD1BF87227001DF1F7 /* life.mp3 */,
+				14C272FE1BF87227001DF1F7 /* slips.mp3 */,
+				14C272FF1BF87227001DF1F7 /* slips2.mp3 */,
+			);
+			name = songs;
+			sourceTree = "<group>";
+		};
+		2AFEE07A1FA55CD80075A02F /* util */ = {
+			isa = PBXGroup;
+			children = (
+				2AFEE07B1FA55CF20075A02F /* Consts.swift */,
+			);
+			path = util;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		147653381BC1C21200280D36 /* A Procession of Dreams */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 147653611BC1C21200280D36 /* Build configuration list for PBXNativeTarget "A Procession of Dreams" */;
+			buildPhases = (
+				147653351BC1C21200280D36 /* Sources */,
+				147653361BC1C21200280D36 /* Frameworks */,
+				147653371BC1C21200280D36 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "A Procession of Dreams";
+			productName = "A Procession of Dreams";
+			productReference = 14C8FF531C33033F0028B2A6 /* Corsage APoD.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1476534C1BC1C21200280D36 /* A Procession of DreamsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 147653641BC1C21200280D36 /* Build configuration list for PBXNativeTarget "A Procession of DreamsTests" */;
+			buildPhases = (
+				147653491BC1C21200280D36 /* Sources */,
+				1476534A1BC1C21200280D36 /* Frameworks */,
+				1476534B1BC1C21200280D36 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1476534F1BC1C21200280D36 /* PBXTargetDependency */,
+			);
+			name = "A Procession of DreamsTests";
+			productName = "A Procession of DreamsTests";
+			productReference = 14C8FF541C33033F0028B2A6 /* A Procession of DreamsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		147653571BC1C21200280D36 /* A Procession of DreamsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 147653671BC1C21200280D36 /* Build configuration list for PBXNativeTarget "A Procession of DreamsUITests" */;
+			buildPhases = (
+				147653541BC1C21200280D36 /* Sources */,
+				147653551BC1C21200280D36 /* Frameworks */,
+				147653561BC1C21200280D36 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1476535A1BC1C21200280D36 /* PBXTargetDependency */,
+			);
+			name = "A Procession of DreamsUITests";
+			productName = "A Procession of DreamsUITests";
+			productReference = 14C8FF551C33033F0028B2A6 /* A Procession of DreamsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		147653311BC1C21200280D36 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Ron Allan";
+				TargetAttributes = {
+					147653381BC1C21200280D36 = {
+						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = C98XPK248W;
+					};
+					1476534C1BC1C21200280D36 = {
+						CreatedOnToolsVersion = 7.0.1;
+						TestTargetID = 147653381BC1C21200280D36;
+					};
+					147653571BC1C21200280D36 = {
+						CreatedOnToolsVersion = 7.0.1;
+						TestTargetID = 147653381BC1C21200280D36;
+					};
+				};
+			};
+			buildConfigurationList = 147653341BC1C21200280D36 /* Build configuration list for PBXProject "A Procession of Dreams" */;
+			compatibilityVersion = "Xcode 6.3";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 147653301BC1C21200280D36;
+			productRefGroup = 147653301BC1C21200280D36;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				147653381BC1C21200280D36 /* A Procession of Dreams */,
+				1476534C1BC1C21200280D36 /* A Procession of DreamsTests */,
+				147653571BC1C21200280D36 /* A Procession of DreamsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		147653371BC1C21200280D36 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				143E1FC91C271329005BCF0C /* bill_summeroflove2009_med.jpg in Resources */,
+				14B8C6591BE66DF300EAF296 /* splash.png in Resources */,
+				14B8C6421BE66DF300EAF296 /* play.png in Resources */,
+				143E1FB61C265A2E005BCF0C /* band_sol2_med.jpg in Resources */,
+				143E1FC11C271329005BCF0C /* ubc_sub_med.jpg in Resources */,
+				14B8C6371BE66DF300EAF296 /* leg_image.png in Resources */,
+				14A626251C2F2D8400C123C6 /* apod_bg_trans.png in Resources */,
+				14B8C65B1BE66DF300EAF296 /* stop.png in Resources */,
+				143E1FC21C271329005BCF0C /* ron_townpump1988_med.jpg in Resources */,
+				14B8C6061BE66DF300EAF296 /* apod_cover_ico.png in Resources */,
+				14C273001BF87227001DF1F7 /* coda.mp3 in Resources */,
+				1487AB531C06D36300422602 /* song3.txt in Resources */,
+				14B8C6621BE66DF300EAF296 /* tree.png in Resources */,
+				14B8C6391BE66DF300EAF296 /* pause.png in Resources */,
+				143E1FD01C271500005BCF0C /* band_sol4_med.jpg in Resources */,
+				143E1FC51C271329005BCF0C /* phil_summeroflove2009_med.jpg in Resources */,
+				14EFBAA51C2904470011C7D6 /* Icon-76@x2.png in Resources */,
+				143E1FAE1C265883005BCF0C /* band_sol1_med.jpg in Resources */,
+				14EFBAA61C2904470011C7D6 /* Icon-76.png in Resources */,
+				1487AB511C06D36300422602 /* song1.txt in Resources */,
+				14B8C65E1BE66DF300EAF296 /* thumb_img.png in Resources */,
+				1487AB501C06D36300422602 /* song4.txt in Resources */,
+				14B8C62E1BE66DF300EAF296 /* head_image_white.png in Resources */,
+				14B8C6071BE66DF300EAF296 /* apod_cover_sq.png in Resources */,
+				143E1FB31C265A2E005BCF0C /* waldorf_med.jpg in Resources */,
+				14C273021BF87227001DF1F7 /* leave.mp3 in Resources */,
+				1487AB541C06D36300422602 /* song0.txt in Resources */,
+				14B8C6051BE66DF300EAF296 /* apod_bg.png in Resources */,
+				143E1FD21C27547A005BCF0C /* back_med.jpg in Resources */,
+				143E1FB41C265A2E005BCF0C /* phil_and_clown_med.jpg in Resources */,
+				14B8C6231BE66DF300EAF296 /* corsage_title_on_white.png in Resources */,
+				14C273051BF87227001DF1F7 /* slips2.mp3 in Resources */,
+				14B8C6081BE66DF300EAF296 /* Contents.json in Resources */,
+				143E1FCF1C271500005BCF0C /* bill_townpump1988_med.jpg in Resources */,
+				143E1FC81C271329005BCF0C /* full_body_white2.png in Resources */,
+				14CE7D2B1BF1B89000779BE4 /* Main.storyboard in Resources */,
+				14EFBAA21C28FFA80011C7D6 /* Icon-60@2x.png in Resources */,
+				1487AB521C06D36300422602 /* song2.txt in Resources */,
+				14B8C6361BE66DF300EAF296 /* leg_image_white.png in Resources */,
+				14B8C6211BE66DF300EAF296 /* corsage_more.png in Resources */,
+				14B8C6301BE66DF300EAF296 /* ic_apod.png in Resources */,
+				143E1FB51C265A2E005BCF0C /* coliseum_backstage_med.jpg in Resources */,
+				143E1FAD1C265883005BCF0C /* john_summeroflove2009_med.jpg in Resources */,
+				143E1FCE1C271500005BCF0C /* summeroflove_poster_med.jpg in Resources */,
+				14C273031BF87227001DF1F7 /* life.mp3 in Resources */,
+				143E1FC41C271329005BCF0C /* phil_townpump1988_med.png in Resources */,
+				143E1FC31C271329005BCF0C /* ron_summeroflove2009_med.jpg in Resources */,
+				14B8C6601BE66DF300EAF296 /* top_half_white.png in Resources */,
+				14B8C6261BE66DF300EAF296 /* cover.png in Resources */,
+				147653471BC1C21200280D36 /* LaunchScreen.storyboard in Resources */,
+				14C273011BF87227001DF1F7 /* heaven.mp3 in Resources */,
+				142EA49C1BE09AAF00C72543 /* SongList.json in Resources */,
+				143E1FC61C271329005BCF0C /* john_townpump1988_med.jpg in Resources */,
+				14B8C62A1BE66DF300EAF296 /* full_body_white.png in Resources */,
+				14B8C65F1BE66DF300EAF296 /* thumb.png in Resources */,
+				147653441BC1C21200280D36 /* Assets.xcassets in Resources */,
+				143E1FCA1C271329005BCF0C /* band_sol3_med.jpg in Resources */,
+				14B8C6091BE66DF300EAF296 /* arm_image_white.png in Resources */,
+				143E1FC71C271329005BCF0C /* gord_summeroflove2009_med.jpg in Resources */,
+				14B8C6221BE66DF300EAF296 /* corsage_thumb.png in Resources */,
+				14C273041BF87227001DF1F7 /* slips.mp3 in Resources */,
+				14C8FF511C32D6620028B2A6 /* Icon-83.5@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1476534B1BC1C21200280D36 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		147653561BC1C21200280D36 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		147653351BC1C21200280D36 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				145AE35D1C225F5F008BEDFE /* CarouselViewController.swift in Sources */,
+				145507391C1E42FB007D6384 /* UrlLinksDescriptor.swift in Sources */,
+				2AFEE0871FA6C8D20075A02F /* CollectionViewCell.swift in Sources */,
+				1487AB3A1C06D25900422602 /* SongDescriptor.swift in Sources */,
+				14508D6B1BDEF3DE00EED7C3 /* MasterViewController.swift in Sources */,
+				2AFEE0891FA6D4760075A02F /* LyricsView.swift in Sources */,
+				14809ED01C23CC92008D0C0B /* MyCell.swift in Sources */,
+				143E1FA61C25D271005BCF0C /* ImageDescriptor.swift in Sources */,
+				14508D6F1BDF121C00EED7C3 /* SongContentViewController.swift in Sources */,
+				141EAD1A1C0D663800029CAA /* TimerUtil.swift in Sources */,
+				2AFEE07C1FA55CF20075A02F /* Consts.swift in Sources */,
+				1476533D1BC1C21200280D36 /* AppDelegate.swift in Sources */,
+				145507371C1E2320007D6384 /* WebViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		147653491BC1C21200280D36 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				147653521BC1C21200280D36 /* A_Procession_of_DreamsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		147653541BC1C21200280D36 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1476535D1BC1C21200280D36 /* A_Procession_of_DreamsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1476534F1BC1C21200280D36 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 147653381BC1C21200280D36 /* A Procession of Dreams */;
+			targetProxy = 1476534E1BC1C21200280D36 /* PBXContainerItemProxy */;
+		};
+		1476535A1BC1C21200280D36 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 147653381BC1C21200280D36 /* A Procession of Dreams */;
+			targetProxy = 147653591BC1C21200280D36 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		147653451BC1C21200280D36 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				147653461BC1C21200280D36 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1476535F1BC1C21200280D36 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		147653601BC1C21200280D36 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		147653621BC1C21200280D36 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "A Procession of Dreams/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rcal.corsage.AProcessionOfDreams;
+				PRODUCT_NAME = "Corsage APoD";
+				SWIFT_DISABLE_SAFETY_CHECKS = NO;
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_SUPPRESS_WARNINGS = NO;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		147653631BC1C21200280D36 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "A Procession of Dreams/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.rcal.corsage.AProcessionOfDreams;
+				PRODUCT_NAME = "Corsage APoD";
+				SWIFT_DISABLE_SAFETY_CHECKS = NO;
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_SUPPRESS_WARNINGS = NO;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		147653651BC1C21200280D36 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "A Procession of DreamsTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rcal.corsage.A-Procession-of-DreamsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/A Procession of Dreams.app/A Procession of Dreams";
+			};
+			name = Debug;
+		};
+		147653661BC1C21200280D36 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "A Procession of DreamsTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rcal.corsage.A-Procession-of-DreamsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/A Procession of Dreams.app/A Procession of Dreams";
+			};
+			name = Release;
+		};
+		147653681BC1C21200280D36 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "A Procession of DreamsUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rcal.corsage.A-Procession-of-DreamsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_TARGET_NAME = "A Procession of Dreams";
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		147653691BC1C21200280D36 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "A Procession of DreamsUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rcal.corsage.A-Procession-of-DreamsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TEST_TARGET_NAME = "A Procession of Dreams";
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		147653341BC1C21200280D36 /* Build configuration list for PBXProject "A Procession of Dreams" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1476535F1BC1C21200280D36 /* Debug */,
+				147653601BC1C21200280D36 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		147653611BC1C21200280D36 /* Build configuration list for PBXNativeTarget "A Procession of Dreams" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				147653621BC1C21200280D36 /* Debug */,
+				147653631BC1C21200280D36 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		147653641BC1C21200280D36 /* Build configuration list for PBXNativeTarget "A Procession of DreamsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				147653651BC1C21200280D36 /* Debug */,
+				147653661BC1C21200280D36 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		147653671BC1C21200280D36 /* Build configuration list for PBXNativeTarget "A Procession of DreamsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				147653681BC1C21200280D36 /* Debug */,
+				147653691BC1C21200280D36 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 147653311BC1C21200280D36 /* Project object */;
+}

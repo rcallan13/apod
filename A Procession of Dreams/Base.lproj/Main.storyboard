@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Z1J-Tf-gq6">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home-->
+        <scene sceneID="N6n-6Z-9Uq">
+            <objects>
+                <viewController storyboardIdentifier="masterViewController" title="Home" id="Z1J-Tf-gq6" customClass="MasterViewController" customModule="A_Procession_of_Dreams" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="emU-by-Z2g"/>
+                        <viewControllerLayoutGuide type="bottom" id="rZe-ma-eNk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="v8P-WI-S8G">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="o9C-Tx-lTW" kind="showDetail" id="VcN-9H-Gjm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r6D-wc-BnP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3138" y="-1817"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="cYe-fm-oej">
+            <objects>
+                <pageViewController storyboardIdentifier="pageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="o9C-Tx-lTW" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="eIp-Ob-5B1" kind="showDetail" id="zES-u0-OM7"/>
+                    </connections>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pXl-PS-9Zt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2205" y="-2156"/>
+        </scene>
+        <!--Song Content View Controller-->
+        <scene sceneID="rk6-G2-6OS">
+            <objects>
+                <viewController storyboardIdentifier="songContentViewController" id="eIp-Ob-5B1" customClass="SongContentViewController" customModule="A_Procession_of_Dreams" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MPy-DA-Ebh"/>
+                        <viewControllerLayoutGuide type="bottom" id="N2V-gc-T4K"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LWa-we-794">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From Earth to Heaven With A Smile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="scU-UC-vmn">
+                                <rect key="frame" x="20" y="20" width="560" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="arm_image.png" translatesAutoresizingMaskIntoConstraints="NO" id="d4W-Th-tAg">
+                                <rect key="frame" x="68" y="60" width="464" height="428.5"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="d4W-Th-tAg" firstAttribute="leading" secondItem="LWa-we-794" secondAttribute="leadingMargin" constant="48" id="9yw-WL-dGp"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="scU-UC-vmn" secondAttribute="leading" id="S10-13-do5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="scU-UC-vmn" secondAttribute="trailing" id="SvN-0O-QlX"/>
+                            <constraint firstItem="N2V-gc-T4K" firstAttribute="top" secondItem="d4W-Th-tAg" secondAttribute="bottom" constant="111.5" id="Uqg-gz-dZS"/>
+                            <constraint firstItem="scU-UC-vmn" firstAttribute="top" secondItem="MPy-DA-Ebh" secondAttribute="bottom" id="bbU-0V-k9o"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="d4W-Th-tAg" secondAttribute="trailing" constant="48" id="cph-bL-xZU"/>
+                            <constraint firstItem="d4W-Th-tAg" firstAttribute="top" secondItem="scU-UC-vmn" secondAttribute="bottom" constant="19.5" id="xnQ-UF-aOu"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KXB-Ry-Lpm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2205" y="-1419"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arm_image.png" width="286" height="232"/>
+    </resources>
+</document>
