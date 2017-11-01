@@ -12,17 +12,17 @@ import AVFoundation
 import AVKit
 
 @available(iOS 8.0, *)
-class MasterViewController: UIViewController, UIPageViewControllerDataSource, MFMailComposeViewControllerDelegate, AVAudioPlayerDelegate {
+class MasterViewController: UIViewController, MFMailComposeViewControllerDelegate, AVAudioPlayerDelegate {
     
     let BUTTON_SIZE: CGFloat = 38
     let MARGIN: CGFloat = 16
     
+    @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var playbackView: UIView!
     
     var timeRemainingLabel: UILabel?
     var timeExpiredLabel: UILabel?
     var nowPlayingLabel: UILabel?
-    var slider: UISlider?
     var playButton: UIButton?
     var stopButton: UIButton?
     let inc = 2.0
@@ -42,8 +42,7 @@ class MasterViewController: UIViewController, UIPageViewControllerDataSource, MF
     var lastVal: Float = 0
     var lyricsView: LyricsView?
     var songLength: NSArray!
-    var pageViewController: UIPageViewController?
-    
+ 
     // MARK: - lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,34 +55,10 @@ class MasterViewController: UIViewController, UIPageViewControllerDataSource, MF
         default:
             self.view.backgroundColor = UIColor(patternImage: UIImage(named: "apod_bg.png")!)
         }
-        self.pageImages = NSArray(objects: "arm_image_white", "leg_image_white", "head_image_white", "top_half_white", "full_body_white2")
         
         self.songLength = NSArray(objects: "05:18", "04:09", "05:33", "02:34", "02:01")
         
-        self.pageViewController = self.storyboard?.instantiateViewController(withIdentifier: "PageViewController") as? UIPageViewController
-        self.pageViewController?.dataSource = self
-        
-        let startVC = self.viewControllerAtIndex(index: 0) as SongContentViewController
-        let viewControllers = NSArray(object: startVC)
-        
-        self.pageViewController?.setViewControllers(viewControllers as? [UIViewController], direction: .forward, animated: true, completion: nil)
-        
-        self.pageViewController?.view.frame = CGRect.make(0, 30, self.view.frame.width, self.view.frame.size.height - 140)
-        
-        self.addChildViewController(self.pageViewController!)
-        self.view.addSubview((self.pageViewController?.view)!)
-        self.pageViewController?.didMove(toParentViewController: self)
         currentIndex = 0
-        
-        layoutTitles()
-        slider = UISlider(frame: CGRect.make(playbackView.frame.width/6, playbackView.frame.height/4 + MARGIN, 2 * playbackView.frame.width/3, BUTTON_SIZE))
-        slider?.addTarget(self, action: #selector(MasterViewController.songProgressChanged(sender:)), for: .valueChanged)
-        slider?.minimumValue = 0
-        slider?.maximumValue = 100
-        slider?.minimumTrackTintColor = UIColor.darkGray
-        slider?.thumbTintColor = UIColor(red: 0.15, green: 0.4, blue: 0.2, alpha: 1)
-        playbackView.addSubview(slider!)
-        layoutPlayback()
         timerUtil = TimerUtil()
     }
     
@@ -96,7 +71,7 @@ class MasterViewController: UIViewController, UIPageViewControllerDataSource, MF
             onDismissLyrics(sender as AnyObject)
             return
         }
-        
+        /*
         let rect = (pageViewController?.view.frame)!
         lyricsView = LyricsView(frame: CGRect.make(rect.origin.x + MARGIN, rect.origin.y, rect.width - 2 * MARGIN, rect.height - 2 * BUTTON_SIZE))
         lyricsView?.isHidden = true
@@ -119,6 +94,7 @@ class MasterViewController: UIViewController, UIPageViewControllerDataSource, MF
         }, completion: {(finished: Bool) in
             
         })
+     */
     }
     
     @objc func onDismissLyrics(_ sender: AnyObject) {
@@ -131,6 +107,7 @@ class MasterViewController: UIViewController, UIPageViewControllerDataSource, MF
         })
     }
     
+    /*
     @objc func onPlay(_ sender: AnyObject) {
         if audioPlayer != nil {
             if audioPlayer.isPlaying {
@@ -179,119 +156,12 @@ class MasterViewController: UIViewController, UIPageViewControllerDataSource, MF
             }
         }
     }
-    
+    */
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        if flag {
-            playNextSong()
-        }
     }
     
     func audioPlayerDecodeErrorDidOccur(_ player: AVAudioPlayer, error: Error?) {
         
-    }
-    
-    @objc func songProgressChanged(sender: UISlider) {
-        let val = sender.value
-        if audioPlayer != nil && audioPlayer.isPlaying {
-            let delta = lastVal - val
-            if delta > 0.0 {
-                audioPlayer.currentTime -= inc
-            } else {
-                audioPlayer.currentTime += inc
-            }
-            lastVal = val
-            updateSliderProgress()
-        }
-    }
-    
-    // stop the playback
-    @objc func onStop(_ sender: AnyObject) {
-        if audioPlayer != nil {
-            audioPlayer.currentTime = 0
-            audioPlayer.stop()
-            slider?.value = 0
-            songProgressChanged(sender: slider!)
-            timeRemainingLabel!.isHidden = true
-            timeExpiredLabel!.isHidden = true
-            nowPlayingLabel?.isHidden = true
-            isPaused = false
-            playButton?.setImage(UIImage(named: "play.png"), for: .normal)
-        }
-    }
-    
-    @objc func updateSliderProgress() {
-        if timerUtil != nil && audioPlayer != nil {
-            let deltaRem = toInt(rem: timerUtil.duration - audioPlayer.currentTime)
-            let remTime = timerUtil.getFormattedTime(seconds: deltaRem)
-            timeRemainingLabel!.text = remTime
-            
-            let deltaExp = toInt(rem: audioPlayer.currentTime)
-            let expTime = timerUtil.getFormattedTime(seconds: deltaExp)
-            timeExpiredLabel!.text = expTime
-            
-            let progress = timerUtil.getTimeAsFloat(expired: audioPlayer.currentTime)
-            slider?.setValue(progress, animated: false)
-        }
-    }
-    
-    func playNextSong() {
-        if MasterViewController.currentSong < (SongDescriptor.getNumSongs() - 1) {
-            MasterViewController.currentSong = MasterViewController.currentSong + 1;
-            isAutoPlay = true
-            playSong(MasterViewController.currentSong)
-        } else {
-            MasterViewController.currentSong = 0
-            isAutoPlay = false
-        }
-    }
-    
-    func viewControllerAtIndex(index: Int) -> SongContentViewController {
-        if let vc: SongContentViewController = self.storyboard?.instantiateViewController(withIdentifier: "ContentViewController") as? SongContentViewController {
-            vc.pageImage = self.pageImages[index] as! String
-            vc.pageTitle = SongDescriptor.titles[index]
-            vc.pageIndex = index
-            return vc
-        }
-        return SongContentViewController()
-    }
-    
-    // MARK: - Page View Controller Data Source
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        
-        let vc = viewController as! SongContentViewController
-        var index = vc.pageIndex as Int
-        currentIndex = index
-        if (index == 0 || index == NSNotFound) {
-            return nil
-        }
-        index = index - 1
-        return self.viewControllerAtIndex(index: index)
-        
-    }
-    
-    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        
-        let vc = viewController as! SongContentViewController
-        var index = vc.pageIndex as Int
-        currentIndex = index
-        if (index == NSNotFound) {
-            return nil
-        }
-        index = index + 1
-        
-        if (index == SongDescriptor.titles.count) {
-            return nil
-        }
-        return self.viewControllerAtIndex(index: index)
-        
-    }
-    
-    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
-        return SongDescriptor.titles.count
-    }
-    
-    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
-        return currentIndex
     }
     
     func openPage(action: UIAlertAction!, urlString: String) {
@@ -370,77 +240,6 @@ class MasterViewController: UIViewController, UIPageViewControllerDataSource, MF
     }
     // MARK: - Callbacks
     // Display the credits in an action sheet
-    func displayCredits(sender: AnyObject) {
-        displayUrlActionSheet(sender: sender)
-    }
-    
-    private func toInt(rem: Double) -> Int {
-        let delta:Int = Int(rem)
-        return delta
-    }
-    
-    private func getIndexForPage() -> Int {
-        return currentIndex
-    }
-    
-    private func layoutTitles() {
-        let mainTitle = UILabel(frame: CGRect.make(Consts.MARGIN_HORIZ, 2 * Consts.MARGIN_VERT, self.view.frame.width, 30))
-        self.view.addSubview(mainTitle)
-        mainTitle.text = "Corsage"
-        mainTitle.font = UIFont(name: "Arial", size: 28)
-        mainTitle.shadowColor = UIColor(white: 0.4, alpha: 0.5)
-        mainTitle.textColor = UIColor.gray
-        mainTitle.shadowOffset = CGSize(width: 4, height: 4)
-        
-        let subTitle = UILabel(frame: CGRect.make(Consts.MARGIN_HORIZ, 2 * Consts.MARGIN_VERT + 34, self.view.frame.width, 24))
-        subTitle.text = "A Procession of Dreams"
-        subTitle.font = UIFont(name: "Arial", size: 22)
-        subTitle.textColor = UIColor.white
-        subTitle.shadowColor = UIColor.shadowGray()
-        subTitle.shadowOffset = CGSize(width: 2, height: 2)
-        self.view.addSubview(subTitle)
-    }
-    
-    private func layoutPlayback() {
-        
-        playButton = UIButton(frame: CGRect.make((slider?.frame.midX)! + MARGIN, playbackView.frame.height - MARGIN - BUTTON_SIZE, BUTTON_SIZE, BUTTON_SIZE))
-        NSLog("Height BUTTON: \((self.playButton?.frame.origin.y)!)")
-        let image = UIImage(named: "play.png")
-        playButton?.setBackgroundImage(image, for: .normal)
-        playButton?.addTarget(self, action: #selector(onPlay(_:)), for: .touchUpInside)
-        playbackView.addSubview(playButton!)
-        
-        stopButton = UIButton(frame: CGRect.make((slider?.frame.midX)! - MARGIN - BUTTON_SIZE, playbackView.frame.height - MARGIN - BUTTON_SIZE, BUTTON_SIZE, BUTTON_SIZE))
-        let stopImage = UIImage(named: "stop.png")
-        stopButton?.setBackgroundImage(stopImage, for: .normal)
-        stopButton?.addTarget(self, action: #selector(onStop(_:)), for: .touchUpInside)
-        playbackView.addSubview(stopButton!)
-        
-        let sliderX = (slider?.frame.origin.x)!
-        let sliderY = (slider?.frame.origin.y)! - MARGIN
-        timeRemainingLabel = UILabel(frame: CGRect.make(0, sliderY + MARGIN, sliderX - MARGIN/2, (slider?.frame.height)!))
-        timeRemainingLabel?.textAlignment = NSTextAlignment.right
-        timeRemainingLabel?.font = UIFont(name: "Arial", size: 11)
-        timeRemainingLabel?.textColor = UIColor.white
-        timeRemainingLabel?.isHidden = true
-        playbackView.addSubview(timeRemainingLabel!)
-        
-        timeExpiredLabel = UILabel(frame: CGRect.make(sliderX + (slider?.frame.width)! + MARGIN/2, sliderY  + MARGIN, sliderX - MARGIN/2, (slider?.frame.height)!))
-        timeExpiredLabel?.textAlignment = NSTextAlignment.left
-        timeExpiredLabel?.font = UIFont(name: "Arial", size: 11)
-        timeExpiredLabel?.textColor = UIColor.white
-        timeExpiredLabel?.isHidden = true
-        playbackView.addSubview(timeExpiredLabel!)
-        
-        nowPlayingLabel = UILabel(frame: CGRect.make(MARGIN, playbackView.frame.height - (MARGIN - 8), playbackView.frame.width - 2 * MARGIN, MARGIN))
-        nowPlayingLabel?.textColor = UIColor.white
-        let fd = UIFontDescriptor.preferredFontDescriptor(withTextStyle: .caption1)
-        let emph = fd.withSymbolicTraits(.traitItalic)
-        nowPlayingLabel?.font = UIFont(descriptor: emph!, size: 0)
-        playbackView.addSubview(nowPlayingLabel!)
-        nowPlayingLabel?.textAlignment = .center
-        nowPlayingLabel?.isHidden = true
-    }
 }
 
 extension CGRect {

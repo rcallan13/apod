@@ -83,6 +83,7 @@
 		14EFBAA21C28FFA80011C7D6 /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14EFBAA11C28FFA80011C7D6 /* Icon-60@2x.png */; };
 		14EFBAA51C2904470011C7D6 /* Icon-76@x2.png in Resources */ = {isa = PBXBuildFile; fileRef = 14EFBAA31C2904470011C7D6 /* Icon-76@x2.png */; };
 		14EFBAA61C2904470011C7D6 /* Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 14EFBAA41C2904470011C7D6 /* Icon-76.png */; };
+		2AE1B2CA1FA96C58003D7438 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE1B2C91FA96C58003D7438 /* PageViewController.swift */; };
 		2AFEE07C1FA55CF20075A02F /* Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFEE07B1FA55CF20075A02F /* Consts.swift */; };
 		2AFEE0871FA6C8D20075A02F /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFEE0861FA6C8D20075A02F /* CollectionViewCell.swift */; };
 		2AFEE0891FA6D4760075A02F /* LyricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFEE0881FA6D4760075A02F /* LyricsView.swift */; };
@@ -188,6 +189,7 @@
 		14EFBAA11C28FFA80011C7D6 /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-60@2x.png"; path = "Assets.xcassets/Icon-60@2x.png"; sourceTree = "<group>"; };
 		14EFBAA31C2904470011C7D6 /* Icon-76@x2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-76@x2.png"; path = "Assets.xcassets/Icon-76@x2.png"; sourceTree = "<group>"; };
 		14EFBAA41C2904470011C7D6 /* Icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-76.png"; path = "Assets.xcassets/Icon-76.png"; sourceTree = "<group>"; };
+		2AE1B2C91FA96C58003D7438 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		2AFEE07B1FA55CF20075A02F /* Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consts.swift; sourceTree = "<group>"; };
 		2AFEE0861FA6C8D20075A02F /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		2AFEE0881FA6D4760075A02F /* LyricsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricsView.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 		1476533B1BC1C21200280D36 /* A Procession of Dreams */ = {
 			isa = PBXGroup;
 			children = (
+				2AE1B2C81FA96C42003D7438 /* pager */,
 				2AFEE07A1FA55CD80075A02F /* util */,
 				1487AB571C06D37500422602 /* textGroup */,
 				14C272F91BF871EA001DF1F7 /* songs */,
@@ -366,6 +369,14 @@
 				14C272FF1BF87227001DF1F7 /* slips2.mp3 */,
 			);
 			name = songs;
+			sourceTree = "<group>";
+		};
+		2AE1B2C81FA96C42003D7438 /* pager */ = {
+			isa = PBXGroup;
+			children = (
+				2AE1B2C91FA96C58003D7438 /* PageViewController.swift */,
+			);
+			path = pager;
 			sourceTree = "<group>";
 		};
 		2AFEE07A1FA55CD80075A02F /* util */ = {
@@ -567,6 +578,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				145AE35D1C225F5F008BEDFE /* CarouselViewController.swift in Sources */,
+				2AE1B2CA1FA96C58003D7438 /* PageViewController.swift in Sources */,
 				145507391C1E42FB007D6384 /* UrlLinksDescriptor.swift in Sources */,
 				2AFEE0871FA6C8D20075A02F /* CollectionViewCell.swift in Sources */,
 				1487AB3A1C06D25900422602 /* SongDescriptor.swift in Sources */,
