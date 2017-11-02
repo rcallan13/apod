@@ -20,11 +20,16 @@ class MasterViewController: UIViewController, MFMailComposeViewControllerDelegat
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var playbackView: UIView!
     
-    var timeRemainingLabel: UILabel?
-    var timeExpiredLabel: UILabel?
-    var nowPlayingLabel: UILabel?
-    var playButton: UIButton?
-    var stopButton: UIButton?
+    @IBOutlet weak var timeExpiredLabel: UILabel!
+    @IBOutlet weak var timeRemainingLabel: UILabel!
+    
+    @IBOutlet weak var playButton: UIButton!
+    
+    
+    @IBOutlet weak var stopButton: UIButton!
+    
+    @IBOutlet weak var nowPlayingLabel: UILabel!
+    
     let inc = 2.0
     var isPaused = false
     var audioPlayer: AVAudioPlayer!
@@ -107,7 +112,6 @@ class MasterViewController: UIViewController, MFMailComposeViewControllerDelegat
         })
     }
     
-    /*
     @objc func onPlay(_ sender: AnyObject) {
         if audioPlayer != nil {
             if audioPlayer.isPlaying {
@@ -130,6 +134,31 @@ class MasterViewController: UIViewController, MFMailComposeViewControllerDelegat
         playSong(getIndexForPage())
     }
     
+    private func toInt(rem: Double) -> Int {
+        let delta:Int = Int(rem)
+        return delta
+    }
+    
+    @objc func updateSliderProgress() {
+        if timerUtil != nil && audioPlayer != nil {
+            let deltaRem = toInt(rem: timerUtil.duration - audioPlayer.currentTime)
+            let remTime = timerUtil.getFormattedTime(seconds: deltaRem)
+            timeRemainingLabel!.text = remTime
+            
+            let deltaExp = toInt(rem: audioPlayer.currentTime)
+            let expTime = timerUtil.getFormattedTime(seconds: deltaExp)
+            timeExpiredLabel!.text = expTime
+            
+            let progress = timerUtil.getTimeAsFloat(expired: audioPlayer.currentTime)
+            slider.setValue(progress, animated: false)
+        }
+    }
+
+    
+    private func getIndexForPage() -> Int {
+        return currentIndex
+    }
+
     private func playSong(_ index: Int) {
         if let url = Bundle.main.url(forResource: SongDescriptor.getSongAtIndex(index: index), withExtension: "mp3") {
             do {
@@ -150,13 +179,13 @@ class MasterViewController: UIViewController, MFMailComposeViewControllerDelegat
                     isPaused = false
                     playButton?.setImage(UIImage(named: "pause.png"), for: .normal)
                 }
-                nowPlayingLabel?.text = SongDescriptor.titles[index]
-                nowPlayingLabel?.isHidden = false
+                nowPlayingLabel.text = SongDescriptor.titles[index]
+                nowPlayingLabel.isHidden = false
             } catch {
             }
         }
     }
-    */
+    
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
     }
     
