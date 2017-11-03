@@ -15,7 +15,6 @@ class SongDescriptor {
     static var songs = ["heaven", "slips", "leave", "life", "coda"]
     static var lyrics = [String]()
     static var titles = ["From Earth To Heaven With A Smile", "It All Slips Away", "As I Must Leave You", "Life Goes On (Without You)", "Coda"]
-    static var pageImages = ["arm_image_white", "leg_image_white", "head_image_white", "top_half_white", "full_body_white2"]
     
     static func initLyrics() {
         for count in 0..<NUMBER_OF_SONGS {
