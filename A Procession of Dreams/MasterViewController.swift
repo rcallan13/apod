@@ -42,11 +42,17 @@ class MasterViewController: UIViewController, UIPageViewControllerDataSource, MF
     var lastVal: Float = 0
     var lyricsView: LyricsView?
     var songLength: NSArray!
+    var imageView: UIImageView?
     var pageViewController: UIPageViewController?
+    var didLayout: Bool = false
+    var playbackViewRect: CGRect?
     
     // MARK: - lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        didLayout = false
+        
         SongDescriptor.initLyrics()
         switch UIDevice.current.userInterfaceIdiom {
         case .phone:
@@ -68,12 +74,27 @@ class MasterViewController: UIViewController, UIPageViewControllerDataSource, MF
         
         self.pageViewController?.setViewControllers(viewControllers as? [UIViewController], direction: .forward, animated: true, completion: nil)
         
-        self.pageViewController?.view.frame = CGRect.make(0, 30, self.view.frame.width, self.view.frame.size.height - 140)
+        currentIndex = 0
+        timerUtil = TimerUtil()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        if didLayout {
+            return
+        }
+        let w = 2 * self.view.frame.width/3
+        imageView = UIImageView(frame: CGRect.make(MARGIN, 2 * MARGIN, w, w/3))
+        let image = UIImage(named: "corsage_title_on_white.png")
+        imageView?.image = image
+        imageView?.contentMode = .scaleAspectFit
+        self.view.addSubview(imageView!)
+        self.view.sendSubview(toBack: imageView!)
         
+        self.pageViewController?.view.frame = CGRect.make(0, 30, self.view.frame.width, self.view.frame.size.height - 140)
         self.addChildViewController(self.pageViewController!)
         self.view.addSubview((self.pageViewController?.view)!)
         self.pageViewController?.didMove(toParentViewController: self)
-        currentIndex = 0
+        
         
         slider = UISlider(frame: CGRect.make(playbackView.frame.width/6, playbackView.frame.height/4 + MARGIN, 2 * playbackView.frame.width/3, BUTTON_SIZE))
         slider?.addTarget(self, action: #selector(MasterViewController.songProgressChanged(sender:)), for: .valueChanged)
@@ -82,18 +103,9 @@ class MasterViewController: UIViewController, UIPageViewControllerDataSource, MF
         slider?.minimumTrackTintColor = UIColor.darkGray
         slider?.thumbTintColor = UIColor(red: 0.15, green: 0.4, blue: 0.2, alpha: 1)
         playbackView.addSubview(slider!)
+        playbackViewRect = playbackView.bounds
         layoutPlayback()
-        timerUtil = TimerUtil()
-    }
-    
-    override func viewWillLayoutSubviews() {
-        let w = 2 * self.view.frame.width/3
-        let imageView = UIImageView(frame: CGRect.make(MARGIN, 2 * MARGIN, w, w/3))
-        let image = UIImage(named: "corsage_title_on_white.png")
-        imageView.image = image
-        imageView.contentMode = .scaleAspectFit
-        self.view.addSubview(imageView)
-        self.view.sendSubview(toBack: imageView)
+        didLayout = true
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -101,7 +113,10 @@ class MasterViewController: UIViewController, UIPageViewControllerDataSource, MF
         if size.width > size.height { // Landscape
             
         } else { // Portrait
-            
+            let w = 2 * self.view.frame.width/3
+            imageView?.bounds = CGRect.make(MARGIN, 2 * MARGIN, w, w/3)
+            pageViewController?.view.bounds = CGRect.make(0, 30, self.view.frame.width, self.view.frame.size.height - 140)
+            playbackView?.bounds = playbackViewRect!
         }
     }
     
