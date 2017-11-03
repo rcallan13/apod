@@ -75,7 +75,6 @@ class MasterViewController: UIViewController, UIPageViewControllerDataSource, MF
         self.pageViewController?.didMove(toParentViewController: self)
         currentIndex = 0
         
-        layoutTitles()
         slider = UISlider(frame: CGRect.make(playbackView.frame.width/6, playbackView.frame.height/4 + MARGIN, 2 * playbackView.frame.width/3, BUTTON_SIZE))
         slider?.addTarget(self, action: #selector(MasterViewController.songProgressChanged(sender:)), for: .valueChanged)
         slider?.minimumValue = 0
@@ -85,6 +84,25 @@ class MasterViewController: UIViewController, UIPageViewControllerDataSource, MF
         playbackView.addSubview(slider!)
         layoutPlayback()
         timerUtil = TimerUtil()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        let w = 2 * self.view.frame.width/3
+        let imageView = UIImageView(frame: CGRect.make(MARGIN, 2 * MARGIN, w, w/3))
+        let image = UIImage(named: "corsage_title_on_white.png")
+        imageView.image = image
+        imageView.contentMode = .scaleAspectFit
+        self.view.addSubview(imageView)
+        self.view.sendSubview(toBack: imageView)
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        
+        if size.width > size.height { // Landscape
+            
+        } else { // Portrait
+            
+        }
     }
     
     @IBAction func onPhotos(_ sender: UIButton) {
@@ -113,6 +131,7 @@ class MasterViewController: UIViewController, UIPageViewControllerDataSource, MF
         var transform = CGAffineTransform(translationX: -1 * (lyricsView?.frame.width)!, y: 0)
         lyricsView?.transform = transform
         lyricsView?.isHidden = false
+        self.view.bringSubview(toFront: lyricsView!)
         transform = CGAffineTransform(translationX: 0, y: 0)
         UIView.animate(withDuration: 0.3, animations: {
             self.lyricsView?.transform = transform
@@ -381,24 +400,6 @@ class MasterViewController: UIViewController, UIPageViewControllerDataSource, MF
     
     private func getIndexForPage() -> Int {
         return currentIndex
-    }
-    
-    private func layoutTitles() {
-        let mainTitle = UILabel(frame: CGRect.make(Consts.MARGIN_HORIZ, 2 * Consts.MARGIN_VERT, self.view.frame.width, 30))
-        self.view.addSubview(mainTitle)
-        mainTitle.text = "Corsage"
-        mainTitle.font = UIFont(name: "Arial", size: 28)
-        mainTitle.shadowColor = UIColor(white: 0.4, alpha: 0.5)
-        mainTitle.textColor = UIColor.gray
-        mainTitle.shadowOffset = CGSize(width: 4, height: 4)
-        
-        let subTitle = UILabel(frame: CGRect.make(Consts.MARGIN_HORIZ, 2 * Consts.MARGIN_VERT + 34, self.view.frame.width, 24))
-        subTitle.text = "A Procession of Dreams"
-        subTitle.font = UIFont(name: "Arial", size: 22)
-        subTitle.textColor = UIColor.white
-        subTitle.shadowColor = UIColor.shadowGray()
-        subTitle.shadowOffset = CGSize(width: 2, height: 2)
-        self.view.addSubview(subTitle)
     }
     
     private func layoutPlayback() {
