@@ -10,7 +10,6 @@ import UIKit
 import MessageUI
 import AVFoundation
 import AVKit
-import FirebaseAnalytics
 
 @available(iOS 8.0, *)
 class MasterViewController: UIViewController, UIPageViewControllerDataSource, MFMailComposeViewControllerDelegate, AVAudioPlayerDelegate {
@@ -18,7 +17,7 @@ class MasterViewController: UIViewController, UIPageViewControllerDataSource, MF
     let BUTTON_SIZE: CGFloat = 38
     let MARGIN: CGFloat = 16
     
-    @IBOutlet weak var playbackView: UIView!
+    var playbackView: UIView?
     
     var timeRemainingLabel: UILabel?
     var timeExpiredLabel: UILabel?
@@ -29,9 +28,8 @@ class MasterViewController: UIViewController, UIPageViewControllerDataSource, MF
     let inc = 2.0
     var isPaused = false
     var audioPlayer: AVAudioPlayer!
-    var moreBarButton: UIBarButtonItem?
     var lyricsButton: UIButton?
-    var creditsButton: UIButton?
+    var moreButton: UIButton?
     
     var pageImages: NSArray!
     static var currentSong: Int = 0
@@ -98,42 +96,44 @@ class MasterViewController: UIViewController, UIPageViewControllerDataSource, MF
         self.view.addSubview((self.pageViewController?.view)!)
         self.pageViewController?.didMove(toParentViewController: self)
         
-        
-        slider = UISlider(frame: CGRect.make(playbackView.frame.width/6, playbackView.frame.height/4, 2 * playbackView.frame.width/3, BUTTON_SIZE))
+        playbackView = UIView(frame: CGRect.make(0, 3 * self.view.frame.height/4, self.view.frame.width, self.view.frame.height/4))
+        self.view.addSubview(playbackView!)
+        slider = UISlider(frame: CGRect.make((playbackView?.frame.width)!/6, (playbackView?.frame.height)!/4, 2 * (playbackView?.frame.width)!/3, BUTTON_SIZE))
         slider?.addTarget(self, action: #selector(MasterViewController.songProgressChanged(sender:)), for: .valueChanged)
         slider?.minimumValue = 0
         slider?.maximumValue = 100
         slider?.minimumTrackTintColor = UIColor.darkGray
         let thumbImage = UIImage(named: "thumb_image.png")
         slider?.setThumbImage(thumbImage, for: .normal)
-        playbackView.addSubview(slider!)
-        playbackViewRect = playbackView.bounds
+        playbackView?.addSubview(slider!)
+        playbackViewRect = playbackView?.bounds
         layoutPlayback()
         didLayout = true
     }
 
-    @IBAction func onPhotos(_ sender: UIButton) {
+    @objc func onMore(_ sender: UIButton) {
         displayUrlActionSheet(sender: sender)
     }
     
-    @IBAction func onLyrics(_ sender: Any) {
+    @objc func onLyrics(_ sender: Any) {
         if lyricsView != nil {
             onDismissLyrics(sender as AnyObject)
             return
         }
         
         let rect = (pageViewController?.view.frame)!
-        lyricsView = LyricsView(frame: CGRect.make(rect.origin.x + MARGIN, rect.origin.y, rect.width - 2 * MARGIN, rect.height - 2 * BUTTON_SIZE))
+        lyricsView = LyricsView(frame: CGRect.make(rect.origin.x, rect.origin.y, rect.width, rect.height - BUTTON_SIZE))
         lyricsView?.isHidden = true
         lyricsView?.songIndex = currentIndex
         lyricsView?.backgroundColor = UIColor.black
-        let dismiss = UIButton(frame: CGRect.make(((lyricsView?.frame.width)!) - BUTTON_SIZE, 0, BUTTON_SIZE, BUTTON_SIZE))
-        dismiss.setTitle("X", for: .normal)
+        let dismiss = UIButton(frame: CGRect.make(((lyricsView?.frame.width)!) - 2 * BUTTON_SIZE, 0, 2 * BUTTON_SIZE, BUTTON_SIZE))
+        dismiss.setTitle("Dismiss", for: .normal)
         dismiss.setTitleColor(UIColor.white, for: .normal)
+        dismiss.titleLabel?.font = UIFont(name: "Chalkduster", size: 14)
         dismiss.addTarget(self, action: #selector(onDismissLyrics(_:)), for: .touchUpInside)
         lyricsView?.addSubview(dismiss)
         self.view.addSubview(lyricsView!)
-        lyricsView?.contentSize = CGSize(width: self.view.frame.width - 32, height: (lyricsView?.lyricsLabel?.intrinsicContentSize.height)! + 70)
+        lyricsView?.contentSize = CGSize(width: self.view.frame.width - 2 * MARGIN, height: (lyricsView?.lyricsLabel?.intrinsicContentSize.height)! + 100)
         
         var transform = CGAffineTransform(translationX: -1 * (lyricsView?.frame.width)!, y: 0)
         lyricsView?.transform = transform
@@ -180,8 +180,6 @@ class MasterViewController: UIViewController, UIPageViewControllerDataSource, MF
     }
     
     private func playSong(_ index: Int) {
-        
-        FIRAnalytics.logEvent(withName: "Song: \(index)", parameters: nil)
        
         if let url = Bundle.main.url(forResource: SongDescriptor.getSongAtIndex(index: index), withExtension: "mp3") {
             do {
@@ -415,18 +413,35 @@ class MasterViewController: UIViewController, UIPageViewControllerDataSource, MF
     private func layoutPlayback() {
         
         let offset = 3 * MARGIN/2
-        playButton = UIButton(frame: CGRect.make((slider?.frame.midX)! + MARGIN, playbackView.frame.height - offset - BUTTON_SIZE, BUTTON_SIZE, BUTTON_SIZE))
+        playButton = UIButton(frame: CGRect.make((slider?.frame.midX)! + MARGIN, (playbackView?.frame.height)! - offset - BUTTON_SIZE, BUTTON_SIZE, BUTTON_SIZE))
         NSLog("Height BUTTON: \((self.playButton?.frame.origin.y)!)")
         let image = UIImage(named: "play.png")
         playButton?.setBackgroundImage(image, for: .normal)
         playButton?.addTarget(self, action: #selector(onPlay(_:)), for: .touchUpInside)
-        playbackView.addSubview(playButton!)
+        playbackView?.addSubview(playButton!)
         
-        stopButton = UIButton(frame: CGRect.make((slider?.frame.midX)! - MARGIN - BUTTON_SIZE, playbackView.frame.height - offset - BUTTON_SIZE, BUTTON_SIZE, BUTTON_SIZE))
+        let x = (playButton?.frame.origin.x)! + BUTTON_SIZE
+        moreButton = UIButton(frame: CGRect.make(x, (playbackView?.frame.height)! - 32, (playbackView?.frame.width)! - x, 24))
+        moreButton?.setTitle("More...", for: .normal)
+        moreButton?.titleLabel?.font = UIFont(name: "Chalkduster", size: 18)!
+        moreButton?.titleLabel?.textColor = UIColor.white
+        moreButton?.titleLabel?.textAlignment = .left
+        moreButton?.addTarget(self, action: #selector(onMore(_:)), for: .touchUpInside)
+        playbackView?.addSubview(moreButton!)
+        
+        stopButton = UIButton(frame: CGRect.make((slider?.frame.midX)! - MARGIN - BUTTON_SIZE, (playbackView?.frame.height)! - offset - BUTTON_SIZE, BUTTON_SIZE, BUTTON_SIZE))
         let stopImage = UIImage(named: "stop.png")
         stopButton?.setBackgroundImage(stopImage, for: .normal)
         stopButton?.addTarget(self, action: #selector(onStop(_:)), for: .touchUpInside)
-        playbackView.addSubview(stopButton!)
+        playbackView?.addSubview(stopButton!)
+        
+        lyricsButton = UIButton(frame: CGRect.make(0, (playbackView?.frame.height)! - 32, (stopButton?.frame.origin.x)!, 24))
+        lyricsButton?.setTitle("Lyrics", for: .normal)
+        lyricsButton?.titleLabel?.font = UIFont(name: "Chalkduster", size: 18)!
+        lyricsButton?.titleLabel?.textColor = UIColor.white
+        lyricsButton?.titleLabel?.textAlignment = .left
+        lyricsButton?.addTarget(self, action: #selector(onLyrics(_:)), for: .touchUpInside)
+        playbackView?.addSubview(lyricsButton!)
         
         let sliderX = (slider?.frame.origin.x)!
         let sliderY = (slider?.frame.origin.y)! - MARGIN
@@ -435,21 +450,23 @@ class MasterViewController: UIViewController, UIPageViewControllerDataSource, MF
         timeRemainingLabel?.font = UIFont(name: "Arial", size: 11)
         timeRemainingLabel?.textColor = UIColor.white
         timeRemainingLabel?.isHidden = true
-        playbackView.addSubview(timeRemainingLabel!)
+        playbackView?.addSubview(timeRemainingLabel!)
         
         timeExpiredLabel = UILabel(frame: CGRect.make(sliderX + (slider?.frame.width)! + MARGIN/2, sliderY  + MARGIN, sliderX - MARGIN/2, (slider?.frame.height)!))
         timeExpiredLabel?.textAlignment = NSTextAlignment.left
         timeExpiredLabel?.font = UIFont(name: "Arial", size: 11)
         timeExpiredLabel?.textColor = UIColor.white
         timeExpiredLabel?.isHidden = true
-        playbackView.addSubview(timeExpiredLabel!)
+        playbackView?.addSubview(timeExpiredLabel!)
         
-        nowPlayingLabel = UILabel(frame: CGRect.make(MARGIN, 0, playbackView.frame.width - 2 * MARGIN, MARGIN))
+        nowPlayingLabel = UILabel(frame: CGRect.make(MARGIN, 0, (playbackView?.frame.width)! - 2 * MARGIN, MARGIN))
         nowPlayingLabel?.textColor = UIColor.lightGray
         nowPlayingLabel?.font = UIFont(name: "Chalkduster", size: 12)
-        playbackView.addSubview(nowPlayingLabel!)
+        playbackView?.addSubview(nowPlayingLabel!)
         nowPlayingLabel?.textAlignment = .left
         nowPlayingLabel?.isHidden = true
+        
+        
     }
 }
 

@@ -93,15 +93,15 @@ class CarouselViewController: UICollectionViewController {
         
         let image = UIImage(named: images.getImageForIndex(index: indexPath.row))
         //.withAlignmentRectInsets(UIEdgeInsets(top: 2, left: 0, bottom: 0, right: 0))
-        let w = self.view.frame.width - 60
+        let w = self.view.frame.width - 80
         let y = self.view.center.y - w/2
-        let overlayImageView = UIButton(frame: CGRect.make(30, y, w, w))
+        let overlayImageView = UIButton(frame: CGRect.make(40, y, w, w))
         overlayImageView.frame = CGRect.make(30, y, w, w)
         overlayImageView.layer.borderColor = UIColor.white.cgColor
         overlayImageView.layer.borderWidth = 4
-        overlayImageView.layer.shadowRadius = 12.0
+        overlayImageView.layer.shadowRadius = 10.0
         overlayImageView.layer.masksToBounds = false
-        overlayImageView.layer.shadowOffset = CGSize(width: 12, height: 12)
+        overlayImageView.layer.shadowOffset = CGSize(width: 10, height: 10)
         overlayImageView.layer.shadowColor = UIColor.darkGray.cgColor
         overlayImageView.setBackgroundImage(image, for: .normal)
         self.view.addSubview(overlayImageView)

@@ -4,7 +4,6 @@
 target 'A Procession of Dreams' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
-    pod 'Firebase/Core'
   # Pods for A Procession of Dreams
 
   target 'A Procession of DreamsTests' do

@@ -13,9 +13,6 @@
         <array key="ChalkboardSE.ttc">
             <string>ChalkboardSE-Regular</string>
         </array>
-        <array key="Chalkduster.ttf">
-            <string>Chalkduster</string>
-        </array>
     </customFonts>
     <scenes>
         <!--A Procession of Dreams-->
@@ -29,53 +26,11 @@
                     <view key="view" contentMode="scaleToFill" id="gCL-ar-0CH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NNt-ka-9rl">
-                                <rect key="frame" x="16" y="521" width="343" height="136"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ae-Of-uoD">
-                                        <rect key="frame" x="0.0" y="99" width="124" height="37"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="18"/>
-                                        <state key="normal" title="Lyrics">
-                                            <color key="titleColor" red="0.90588235289999997" green="0.94117647059999998" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="onLyrics:" destination="SyN-Br-aRV" eventType="touchUpInside" id="Ann-Uv-70B"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T56-8m-Sbt">
-                                        <rect key="frame" x="219" y="99" width="124" height="37"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="18"/>
-                                        <state key="normal" title="More">
-                                            <color key="titleColor" red="0.87058823529999996" green="0.94509803920000002" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="onPhotos:" destination="SyN-Br-aRV" eventType="touchUpInside" id="HkC-BE-nMn"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="136" id="cQa-IK-C4P"/>
-                                </constraints>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="cdz-Ti-PKW" firstAttribute="top" secondItem="NNt-ka-9rl" secondAttribute="bottom" constant="10" id="GXb-Yx-Hkj"/>
-                            <constraint firstItem="NNt-ka-9rl" firstAttribute="trailing" secondItem="gCL-ar-0CH" secondAttribute="trailingMargin" id="lXg-DS-htM"/>
-                            <constraint firstItem="NNt-ka-9rl" firstAttribute="leading" secondItem="gCL-ar-0CH" secondAttribute="leadingMargin" id="nX7-dU-N5i"/>
-                        </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="playbackView" destination="NNt-ka-9rl" id="Rde-pJ-tev"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rat-ck-W5G" sceneMemberID="firstResponder"/>
             </objects>
@@ -218,6 +173,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ekI-0O-zIe">
+                                <rect key="frame" x="177" y="323" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s8b-da-jJ6">
                                 <rect key="frame" x="16" y="613" width="343" height="46"/>
                                 <constraints>
@@ -231,7 +190,7 @@
                                     <action selector="onDismiss:" destination="cUv-xM-ycC" eventType="touchUpInside" id="zx9-ha-beT"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gnX-Fy-ngW" customClass="UIWebView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gnX-Fy-ngW" customClass="CallbackWebView" customModule="Corsage_APoD" customModuleProvider="target">
                                 <rect key="frame" x="16" y="20" width="343" height="585"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -252,7 +211,8 @@
                         <barButtonItem key="backBarButtonItem" title="Done" id="nW5-ni-N4W"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="webView" destination="gnX-Fy-ngW" id="bLL-2P-sKE"/>
+                        <outlet property="activityIndicator" destination="ekI-0O-zIe" id="BqU-fU-6FZ"/>
+                        <outlet property="webView" destination="gnX-Fy-ngW" id="1m0-wR-NbT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jYx-ri-qzP" userLabel="First Responder" sceneMemberID="firstResponder"/>

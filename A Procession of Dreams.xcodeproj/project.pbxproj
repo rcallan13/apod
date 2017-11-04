@@ -89,6 +89,7 @@
 		2A7CB5DA1FAD870E0048116D /* CollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7CB5D91FAD870E0048116D /* CollectionViewHeader.swift */; };
 		2A7CB5DC1FAE25EF0048116D /* CollectionViewFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7CB5DB1FAE25EF0048116D /* CollectionViewFooter.swift */; };
 		2A7CB5E01FAE3D830048116D /* thumb_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A7CB5DF1FAE3D830048116D /* thumb_image.png */; };
+		2A7CB5E21FAE62400048116D /* CallbackWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7CB5E11FAE62400048116D /* CallbackWebView.swift */; };
 		2AFEE07C1FA55CF20075A02F /* Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFEE07B1FA55CF20075A02F /* Consts.swift */; };
 		2AFEE0871FA6C8D20075A02F /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFEE0861FA6C8D20075A02F /* CollectionViewCell.swift */; };
 		2AFEE0891FA6D4760075A02F /* LyricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFEE0881FA6D4760075A02F /* LyricsView.swift */; };
@@ -201,10 +202,11 @@
 		1C89C1F6558EF52DD0CBC53A /* Pods_A_Procession_of_DreamsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_A_Procession_of_DreamsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A7CB5CE1FACDD990048116D /* SongModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SongModel.xcdatamodel; sourceTree = "<group>"; };
 		2A7CB5D11FACDD9A0048116D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		2A7CB5D61FACDE710048116D /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		2A7CB5D61FACDE710048116D /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		2A7CB5D91FAD870E0048116D /* CollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewHeader.swift; sourceTree = "<group>"; };
 		2A7CB5DB1FAE25EF0048116D /* CollectionViewFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewFooter.swift; sourceTree = "<group>"; };
 		2A7CB5DF1FAE3D830048116D /* thumb_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumb_image.png; sourceTree = "<group>"; };
+		2A7CB5E11FAE62400048116D /* CallbackWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallbackWebView.swift; sourceTree = "<group>"; };
 		2AFEE07B1FA55CF20075A02F /* Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consts.swift; sourceTree = "<group>"; };
 		2AFEE0861FA6C8D20075A02F /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		2AFEE0881FA6D4760075A02F /* LyricsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricsView.swift; sourceTree = "<group>"; };
@@ -290,6 +292,7 @@
 				145507381C1E42FB007D6384 /* UrlLinksDescriptor.swift */,
 				143E1FA51C25D271005BCF0C /* ImageDescriptor.swift */,
 				2AFEE0881FA6D4760075A02F /* LyricsView.swift */,
+				2A7CB5E11FAE62400048116D /* CallbackWebView.swift */,
 			);
 			path = "A Procession of Dreams";
 			sourceTree = "<group>";
@@ -797,6 +800,7 @@
 				141EAD1A1C0D663800029CAA /* TimerUtil.swift in Sources */,
 				2AFEE07C1FA55CF20075A02F /* Consts.swift in Sources */,
 				1476533D1BC1C21200280D36 /* AppDelegate.swift in Sources */,
+				2A7CB5E21FAE62400048116D /* CallbackWebView.swift in Sources */,
 				145507371C1E2320007D6384 /* WebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

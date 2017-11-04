@@ -8,11 +8,13 @@
 
 import UIKit
 
-class WebViewController: UIViewController {
+class WebViewController: UIViewController, UIWebViewDelegate {
 
     var urlString: String?
     
-    @IBOutlet weak var webView: UIWebView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    @IBOutlet weak var webView: CallbackWebView!
     
     @IBAction func onDismiss(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
@@ -20,8 +22,16 @@ class WebViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        activityIndicator.isHidden = false
+        self.view.bringSubview(toFront: activityIndicator)
+        activityIndicator.startAnimating()
+        webView.delegate = self
         let url = NSURL(string: urlString!)!
         webView.loadRequest(URLRequest(url: url as URL))
+    }
+    
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        activityIndicator.stopAnimating()
+        activityIndicator.isHidden = true
     }
 }

@@ -20,7 +20,7 @@ class LyricsView: UIScrollView {
         didSet {
             let lightGray = UIColor(red: 0xDF, green: 0xDF, blue: 0xDF, alpha: 0.7)
             let title = SongDescriptor.titles[songIndex!]
-            titleLabel = UILabel(frame: CGRect.make(2 * MARGIN_X, 3 * MARGIN_Y, self.frame.width - MARGIN_X, 20))
+            titleLabel = UILabel(frame: CGRect.make(2 * MARGIN_X, 4 * MARGIN_Y, self.frame.width - MARGIN_X, 20))
             titleLabel?.text = title
             titleLabel?.font = UIFont(name: "Arial", size: 18)
             titleLabel?.textColor = lightGray
@@ -28,7 +28,7 @@ class LyricsView: UIScrollView {
             
             let lyric = SongDescriptor.lyrics[songIndex!]
             
-            lyricsLabel = UILabel(frame: CGRect.make(2 * MARGIN_X, 4 * MARGIN_Y + (titleLabel?.frame.height)!, self.frame.width - MARGIN_X, self.frame.height/2))
+            lyricsLabel = UILabel(frame: CGRect.make(2 * MARGIN_X, 5 * MARGIN_Y + (titleLabel?.frame.height)!, self.frame.width - MARGIN_X, self.frame.height/2))
             lyricsLabel?.numberOfLines = 0
             lyricsLabel?.font = UIFont(name: "Arial-Bold", size: 15)
             lyricsLabel?.textColor = UIColor.white
