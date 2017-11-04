@@ -1,0 +1,6 @@
+framework module Pods_A_Procession_of_Dreams {
+  umbrella header "Pods-A Procession of Dreams-umbrella.h"
+
+  export *
+  module * { export * }
+}

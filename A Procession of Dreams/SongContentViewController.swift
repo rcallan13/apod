@@ -13,20 +13,33 @@ import AVFoundation
 class SongContentViewController: UIViewController {
     
     var urlString: String!
-    @IBOutlet weak var songImage: UIImageView!
-    @IBOutlet weak var songTitle: UILabel!
+    var songImage: UIImageView?
+    var songTitle: UILabel?
     
     var pageTitle: String!
     var pageImage: String!
     var pageSong: String!
     var pageIndex: Int!
     
+    var imageRect: CGRect?
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        self.songTitle.text = self.pageTitle
-        self.songTitle.textAlignment = .right
-        self.songImage.image = UIImage(named: self.pageImage)
+    }
+    
+    override func viewWillLayoutSubviews() {
+        songImage = UIImageView(frame: CGRect.make(20, 100, self.view.frame.width - 40, self.view.frame.height/2))
+        self.songImage?.image = UIImage(named: self.pageImage)
+        self.songImage?.contentMode = .scaleAspectFit
+        self.view.addSubview(songImage!)
+        
+        songTitle = UILabel(frame: CGRect.make(0, (songImage?.frame.origin.y)! + (songImage?.frame.height)! + 20, self.view.frame.width - 32, 20))
+        self.view.addSubview(songTitle!)
+        self.songTitle?.text = self.pageTitle
+        self.songTitle?.textAlignment = .right
+        self.songTitle?.textColor = UIColor.white
+        self.songTitle?.font = UIFont(name: "Chalkboard SE", size: 16)
     }
     
     // MARK: - file and actionsheet

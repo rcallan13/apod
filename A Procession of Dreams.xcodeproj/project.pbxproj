@@ -83,9 +83,16 @@
 		14EFBAA21C28FFA80011C7D6 /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 14EFBAA11C28FFA80011C7D6 /* Icon-60@2x.png */; };
 		14EFBAA51C2904470011C7D6 /* Icon-76@x2.png in Resources */ = {isa = PBXBuildFile; fileRef = 14EFBAA31C2904470011C7D6 /* Icon-76@x2.png */; };
 		14EFBAA61C2904470011C7D6 /* Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 14EFBAA41C2904470011C7D6 /* Icon-76.png */; };
+		2A7CB5D21FACDD9A0048116D /* SongModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2A7CB5CD1FACDD990048116D /* SongModel.xcdatamodeld */; };
+		2A7CB5D51FACDD9A0048116D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A7CB5D11FACDD9A0048116D /* GoogleService-Info.plist */; };
+		2A7CB5D71FACDE710048116D /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 2A7CB5D61FACDE710048116D /* Podfile */; };
+		2A7CB5DA1FAD870E0048116D /* CollectionViewHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7CB5D91FAD870E0048116D /* CollectionViewHeaderCollectionReusableView.swift */; };
 		2AFEE07C1FA55CF20075A02F /* Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFEE07B1FA55CF20075A02F /* Consts.swift */; };
 		2AFEE0871FA6C8D20075A02F /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFEE0861FA6C8D20075A02F /* CollectionViewCell.swift */; };
 		2AFEE0891FA6D4760075A02F /* LyricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFEE0881FA6D4760075A02F /* LyricsView.swift */; };
+		569D3CDD6595E62FFD88F6D0 /* Pods_A_Procession_of_Dreams.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83027052F125EFD265DEB3D7 /* Pods_A_Procession_of_Dreams.framework */; };
+		7AFDCBFEAAB027741164DC21 /* Pods_A_Procession_of_DreamsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB34FE99AE95D4E60A6DB0F0 /* Pods_A_Procession_of_DreamsTests.framework */; };
+		F5A4FF73707BF909D0638539 /* Pods_A_Procession_of_DreamsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C89C1F6558EF52DD0CBC53A /* Pods_A_Procession_of_DreamsUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -188,9 +195,22 @@
 		14EFBAA11C28FFA80011C7D6 /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-60@2x.png"; path = "Assets.xcassets/Icon-60@2x.png"; sourceTree = "<group>"; };
 		14EFBAA31C2904470011C7D6 /* Icon-76@x2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-76@x2.png"; path = "Assets.xcassets/Icon-76@x2.png"; sourceTree = "<group>"; };
 		14EFBAA41C2904470011C7D6 /* Icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-76.png"; path = "Assets.xcassets/Icon-76.png"; sourceTree = "<group>"; };
+		1C704F04F1C14C8F46F34049 /* Pods-A Procession of DreamsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-A Procession of DreamsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-A Procession of DreamsTests/Pods-A Procession of DreamsTests.release.xcconfig"; sourceTree = "<group>"; };
+		1C89C1F6558EF52DD0CBC53A /* Pods_A_Procession_of_DreamsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_A_Procession_of_DreamsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A7CB5CE1FACDD990048116D /* SongModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SongModel.xcdatamodel; sourceTree = "<group>"; };
+		2A7CB5D11FACDD9A0048116D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2A7CB5D61FACDE710048116D /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		2A7CB5D91FAD870E0048116D /* CollectionViewHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
 		2AFEE07B1FA55CF20075A02F /* Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consts.swift; sourceTree = "<group>"; };
 		2AFEE0861FA6C8D20075A02F /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		2AFEE0881FA6D4760075A02F /* LyricsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricsView.swift; sourceTree = "<group>"; };
+		319099D88F4EEFF47AA33E45 /* Pods-A Procession of DreamsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-A Procession of DreamsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-A Procession of DreamsUITests/Pods-A Procession of DreamsUITests.release.xcconfig"; sourceTree = "<group>"; };
+		3D10DE3AE1F6C7E7A6B3EE64 /* Pods-A Procession of DreamsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-A Procession of DreamsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-A Procession of DreamsUITests/Pods-A Procession of DreamsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		480ECB771CE09102635AD010 /* Pods-A Procession of Dreams.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-A Procession of Dreams.release.xcconfig"; path = "Pods/Target Support Files/Pods-A Procession of Dreams/Pods-A Procession of Dreams.release.xcconfig"; sourceTree = "<group>"; };
+		83027052F125EFD265DEB3D7 /* Pods_A_Procession_of_Dreams.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_A_Procession_of_Dreams.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		89EF7ED77BE033FE65A12A4C /* Pods-A Procession of DreamsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-A Procession of DreamsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-A Procession of DreamsTests/Pods-A Procession of DreamsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		94DF3DC2204CD5EDDBFD6225 /* Pods-A Procession of Dreams.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-A Procession of Dreams.debug.xcconfig"; path = "Pods/Target Support Files/Pods-A Procession of Dreams/Pods-A Procession of Dreams.debug.xcconfig"; sourceTree = "<group>"; };
+		AB34FE99AE95D4E60A6DB0F0 /* Pods_A_Procession_of_DreamsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_A_Procession_of_DreamsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +220,7 @@
 			files = (
 				14A626291C2F968400C123C6 /* MessageUI.framework in Frameworks */,
 				14C272F81BF7B2FB001DF1F7 /* AVKit.framework in Frameworks */,
+				569D3CDD6595E62FFD88F6D0 /* Pods_A_Procession_of_Dreams.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,6 +228,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AFDCBFEAAB027741164DC21 /* Pods_A_Procession_of_DreamsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +236,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5A4FF73707BF909D0638539 /* Pods_A_Procession_of_DreamsUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,6 +246,7 @@
 		147653301BC1C21200280D36 = {
 			isa = PBXGroup;
 			children = (
+				2A7CB5D61FACDE710048116D /* Podfile */,
 				14A626281C2F968400C123C6 /* MessageUI.framework */,
 				14C272F71BF7B2FB001DF1F7 /* AVKit.framework */,
 				1476533B1BC1C21200280D36 /* A Procession of Dreams */,
@@ -231,12 +255,17 @@
 				14C8FF531C33033F0028B2A6 /* Corsage APoD.app */,
 				14C8FF541C33033F0028B2A6 /* A Procession of DreamsTests.xctest */,
 				14C8FF551C33033F0028B2A6 /* A Procession of DreamsUITests.xctest */,
+				DB6FE8BB2D982870C74F0EDE /* Pods */,
+				716810DDE4A4AFFF095E9634 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		1476533B1BC1C21200280D36 /* A Procession of Dreams */ = {
 			isa = PBXGroup;
 			children = (
+				2A7CB5D81FAD866C0048116D /* collection */,
+				2A7CB5D11FACDD9A0048116D /* GoogleService-Info.plist */,
+				2A7CB5CD1FACDD990048116D /* SongModel.xcdatamodeld */,
 				2AFEE07A1FA55CD80075A02F /* util */,
 				1487AB571C06D37500422602 /* textGroup */,
 				14C272F91BF871EA001DF1F7 /* songs */,
@@ -255,10 +284,7 @@
 				141EAD191C0D663800029CAA /* TimerUtil.swift */,
 				145507361C1E2320007D6384 /* WebViewController.swift */,
 				145507381C1E42FB007D6384 /* UrlLinksDescriptor.swift */,
-				145AE35C1C225F5F008BEDFE /* CarouselViewController.swift */,
-				14809ECF1C23CC92008D0C0B /* MyCell.swift */,
 				143E1FA51C25D271005BCF0C /* ImageDescriptor.swift */,
-				2AFEE0861FA6C8D20075A02F /* CollectionViewCell.swift */,
 				2AFEE0881FA6D4760075A02F /* LyricsView.swift */,
 			);
 			path = "A Procession of Dreams";
@@ -368,12 +394,46 @@
 			name = songs;
 			sourceTree = "<group>";
 		};
+		2A7CB5D81FAD866C0048116D /* collection */ = {
+			isa = PBXGroup;
+			children = (
+				2AFEE0861FA6C8D20075A02F /* CollectionViewCell.swift */,
+				14809ECF1C23CC92008D0C0B /* MyCell.swift */,
+				145AE35C1C225F5F008BEDFE /* CarouselViewController.swift */,
+				2A7CB5D91FAD870E0048116D /* CollectionViewHeaderCollectionReusableView.swift */,
+			);
+			path = collection;
+			sourceTree = "<group>";
+		};
 		2AFEE07A1FA55CD80075A02F /* util */ = {
 			isa = PBXGroup;
 			children = (
 				2AFEE07B1FA55CF20075A02F /* Consts.swift */,
 			);
 			path = util;
+			sourceTree = "<group>";
+		};
+		716810DDE4A4AFFF095E9634 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				83027052F125EFD265DEB3D7 /* Pods_A_Procession_of_Dreams.framework */,
+				AB34FE99AE95D4E60A6DB0F0 /* Pods_A_Procession_of_DreamsTests.framework */,
+				1C89C1F6558EF52DD0CBC53A /* Pods_A_Procession_of_DreamsUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DB6FE8BB2D982870C74F0EDE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				94DF3DC2204CD5EDDBFD6225 /* Pods-A Procession of Dreams.debug.xcconfig */,
+				480ECB771CE09102635AD010 /* Pods-A Procession of Dreams.release.xcconfig */,
+				89EF7ED77BE033FE65A12A4C /* Pods-A Procession of DreamsTests.debug.xcconfig */,
+				1C704F04F1C14C8F46F34049 /* Pods-A Procession of DreamsTests.release.xcconfig */,
+				3D10DE3AE1F6C7E7A6B3EE64 /* Pods-A Procession of DreamsUITests.debug.xcconfig */,
+				319099D88F4EEFF47AA33E45 /* Pods-A Procession of DreamsUITests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -383,9 +443,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 147653611BC1C21200280D36 /* Build configuration list for PBXNativeTarget "A Procession of Dreams" */;
 			buildPhases = (
+				65EEEE1A84D6CE5576C22384 /* [CP] Check Pods Manifest.lock */,
 				147653351BC1C21200280D36 /* Sources */,
 				147653361BC1C21200280D36 /* Frameworks */,
 				147653371BC1C21200280D36 /* Resources */,
+				95263DEE2A71988D17F4CC6E /* [CP] Embed Pods Frameworks */,
+				064F001A8FA53D2BEEAF278E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -400,9 +463,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 147653641BC1C21200280D36 /* Build configuration list for PBXNativeTarget "A Procession of DreamsTests" */;
 			buildPhases = (
+				916EC64C2E5BE19DAC2056C5 /* [CP] Check Pods Manifest.lock */,
 				147653491BC1C21200280D36 /* Sources */,
 				1476534A1BC1C21200280D36 /* Frameworks */,
 				1476534B1BC1C21200280D36 /* Resources */,
+				3A5EB6A4DCE75FD8E5CE66D3 /* [CP] Embed Pods Frameworks */,
+				59F26FB92E2E4716911DAF76 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -418,9 +484,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 147653671BC1C21200280D36 /* Build configuration list for PBXNativeTarget "A Procession of DreamsUITests" */;
 			buildPhases = (
+				ECC9D0433AE01FDAE909BB13 /* [CP] Check Pods Manifest.lock */,
 				147653541BC1C21200280D36 /* Sources */,
 				147653551BC1C21200280D36 /* Frameworks */,
 				147653561BC1C21200280D36 /* Resources */,
+				106D337707C15B4BCA46881D /* [CP] Embed Pods Frameworks */,
+				7FCF58A32174C12983DEC27A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -490,6 +559,7 @@
 				14B8C65B1BE66DF300EAF296 /* stop.png in Resources */,
 				143E1FC21C271329005BCF0C /* ron_townpump1988_med.jpg in Resources */,
 				14B8C6061BE66DF300EAF296 /* apod_cover_ico.png in Resources */,
+				2A7CB5D71FACDE710048116D /* Podfile in Resources */,
 				14C273001BF87227001DF1F7 /* coda.mp3 in Resources */,
 				1487AB531C06D36300422602 /* song3.txt in Resources */,
 				14B8C6621BE66DF300EAF296 /* tree.png in Resources */,
@@ -500,6 +570,7 @@
 				143E1FAE1C265883005BCF0C /* band_sol1_med.jpg in Resources */,
 				14EFBAA61C2904470011C7D6 /* Icon-76.png in Resources */,
 				1487AB511C06D36300422602 /* song1.txt in Resources */,
+				2A7CB5D51FACDD9A0048116D /* GoogleService-Info.plist in Resources */,
 				14B8C65E1BE66DF300EAF296 /* thumb_img.png in Resources */,
 				1487AB501C06D36300422602 /* song4.txt in Resources */,
 				14B8C62E1BE66DF300EAF296 /* head_image_white.png in Resources */,
@@ -561,11 +632,151 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		064F001A8FA53D2BEEAF278E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-A Procession of Dreams/Pods-A Procession of Dreams-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		106D337707C15B4BCA46881D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-A Procession of DreamsUITests/Pods-A Procession of DreamsUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3A5EB6A4DCE75FD8E5CE66D3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-A Procession of DreamsTests/Pods-A Procession of DreamsTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		59F26FB92E2E4716911DAF76 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-A Procession of DreamsTests/Pods-A Procession of DreamsTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		65EEEE1A84D6CE5576C22384 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7FCF58A32174C12983DEC27A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-A Procession of DreamsUITests/Pods-A Procession of DreamsUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		916EC64C2E5BE19DAC2056C5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		95263DEE2A71988D17F4CC6E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-A Procession of Dreams/Pods-A Procession of Dreams-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ECC9D0433AE01FDAE909BB13 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		147653351BC1C21200280D36 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A7CB5DA1FAD870E0048116D /* CollectionViewHeaderCollectionReusableView.swift in Sources */,
+				2A7CB5D21FACDD9A0048116D /* SongModel.xcdatamodeld in Sources */,
 				145AE35D1C225F5F008BEDFE /* CarouselViewController.swift in Sources */,
 				145507391C1E42FB007D6384 /* UrlLinksDescriptor.swift in Sources */,
 				2AFEE0871FA6C8D20075A02F /* CollectionViewCell.swift in Sources */,
@@ -710,6 +921,7 @@
 		};
 		147653621BC1C21200280D36 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94DF3DC2204CD5EDDBFD6225 /* Pods-A Procession of Dreams.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -729,6 +941,7 @@
 		};
 		147653631BC1C21200280D36 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 480ECB771CE09102635AD010 /* Pods-A Procession of Dreams.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -748,6 +961,7 @@
 		};
 		147653651BC1C21200280D36 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89EF7ED77BE033FE65A12A4C /* Pods-A Procession of DreamsTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "A Procession of DreamsTests/Info.plist";
@@ -761,6 +975,7 @@
 		};
 		147653661BC1C21200280D36 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C704F04F1C14C8F46F34049 /* Pods-A Procession of DreamsTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = "A Procession of DreamsTests/Info.plist";
@@ -774,6 +989,7 @@
 		};
 		147653681BC1C21200280D36 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D10DE3AE1F6C7E7A6B3EE64 /* Pods-A Procession of DreamsUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "A Procession of DreamsUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -787,6 +1003,7 @@
 		};
 		147653691BC1C21200280D36 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 319099D88F4EEFF47AA33E45 /* Pods-A Procession of DreamsUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = "A Procession of DreamsUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -838,6 +1055,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2A7CB5CD1FACDD990048116D /* SongModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2A7CB5CE1FACDD990048116D /* SongModel.xcdatamodel */,
+			);
+			currentVersion = 2A7CB5CE1FACDD990048116D /* SongModel.xcdatamodel */;
+			path = SongModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 147653311BC1C21200280D36 /* Project object */;
 }

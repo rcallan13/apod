@@ -34,8 +34,6 @@ class ImageDescriptor {
         imageArray.append("summeroflove_poster_med.jpg")
         imageArray.append("gord_summeroflove2009_med.jpg")
         imageArray.append("john_summeroflove2009_med.jpg")
-        imageArray.append("back_med.jpg")
-        imageArray.append("tree.png")
         
         titleArray = [String]()
     }

@@ -10,6 +10,7 @@ import UIKit
 import MessageUI
 import AVFoundation
 import AVKit
+import FirebaseAnalytics
 
 @available(iOS 8.0, *)
 class MasterViewController: UIViewController, UIPageViewControllerDataSource, MFMailComposeViewControllerDelegate, AVAudioPlayerDelegate {
@@ -46,6 +47,8 @@ class MasterViewController: UIViewController, UIPageViewControllerDataSource, MF
     var pageViewController: UIPageViewController?
     var didLayout: Bool = false
     var playbackViewRect: CGRect?
+    
+    let thumbColor = UIColor.init(red: 0.15, green: 0.4, blue: 0.31, alpha: 0.9)
     
     // MARK: - lifecycle
     override func viewDidLoad() {
@@ -101,25 +104,13 @@ class MasterViewController: UIViewController, UIPageViewControllerDataSource, MF
         slider?.minimumValue = 0
         slider?.maximumValue = 100
         slider?.minimumTrackTintColor = UIColor.darkGray
-        slider?.thumbTintColor = UIColor(red: 0.15, green: 0.4, blue: 0.2, alpha: 1)
+        slider?.thumbTintColor = thumbColor
         playbackView.addSubview(slider!)
         playbackViewRect = playbackView.bounds
         layoutPlayback()
         didLayout = true
     }
-    
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        
-        if size.width > size.height { // Landscape
-            
-        } else { // Portrait
-            let w = 2 * self.view.frame.width/3
-            imageView?.bounds = CGRect.make(MARGIN, 2 * MARGIN, w, w/3)
-            pageViewController?.view.bounds = CGRect.make(0, 30, self.view.frame.width, self.view.frame.size.height - 140)
-            playbackView?.bounds = playbackViewRect!
-        }
-    }
-    
+
     @IBAction func onPhotos(_ sender: UIButton) {
         displayUrlActionSheet(sender: sender)
     }
@@ -188,6 +179,9 @@ class MasterViewController: UIViewController, UIPageViewControllerDataSource, MF
     }
     
     private func playSong(_ index: Int) {
+        
+        FIRAnalytics.logEvent(withName: "Song: \(index)", parameters: nil)
+       
         if let url = Bundle.main.url(forResource: SongDescriptor.getSongAtIndex(index: index), withExtension: "mp3") {
             do {
                 timeRemainingLabel!.isHidden = false
@@ -449,10 +443,11 @@ class MasterViewController: UIViewController, UIPageViewControllerDataSource, MF
         playbackView.addSubview(timeExpiredLabel!)
         
         nowPlayingLabel = UILabel(frame: CGRect.make(MARGIN, playbackView.frame.height - (MARGIN - 8), playbackView.frame.width - 2 * MARGIN, MARGIN))
-        nowPlayingLabel?.textColor = UIColor.white
-        let fd = UIFontDescriptor.preferredFontDescriptor(withTextStyle: .caption1)
-        let emph = fd.withSymbolicTraits(.traitItalic)
-        nowPlayingLabel?.font = UIFont(descriptor: emph!, size: 0)
+        nowPlayingLabel?.textColor = thumbColor
+        //let fd = UIFontDescriptor.preferredFontDescriptor(withTextStyle: .caption1)
+        //let emph = fd.withSymbolicTraits(.traitItalic)
+        //nowPlayingLabel?.font = UIFont(descriptor: emph!, size: 0)
+        nowPlayingLabel?.font = UIFont(name: "", size: 12)
         playbackView.addSubview(nowPlayingLabel!)
         nowPlayingLabel?.textAlignment = .center
         nowPlayingLabel?.isHidden = true
