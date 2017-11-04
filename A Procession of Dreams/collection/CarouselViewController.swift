@@ -69,6 +69,7 @@ class CarouselViewController: UICollectionViewController {
             //4
             assert(false, "Unexpected element kind")
         }
+        return UICollectionReusableView()
     }
     
     @objc func onHeaderDismissTapped(_ sender: UIButton) {

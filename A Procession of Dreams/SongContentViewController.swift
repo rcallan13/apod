@@ -29,11 +29,13 @@ class SongContentViewController: UIViewController {
     }
     
     override func viewWillLayoutSubviews() {
+        songImage?.removeFromSuperview()
         songImage = UIImageView(frame: CGRect.make(20, 100, self.view.frame.width - 40, self.view.frame.height/2))
         self.songImage?.image = UIImage(named: self.pageImage)
         self.songImage?.contentMode = .scaleAspectFit
         self.view.addSubview(songImage!)
         
+        songTitle?.removeFromSuperview()
         songTitle = UILabel(frame: CGRect.make(0, (songImage?.frame.origin.y)! + (songImage?.frame.height)! + 20, self.view.frame.width - 32, 20))
         self.view.addSubview(songTitle!)
         self.songTitle?.text = self.pageTitle
