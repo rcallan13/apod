@@ -200,7 +200,7 @@ class MasterViewController: UIViewController, UIPageViewControllerDataSource, MF
                     isPaused = false
                     playButton?.setImage(UIImage(named: "pause.png"), for: .normal)
                 }
-                nowPlayingLabel?.text = SongDescriptor.titles[index]
+                nowPlayingLabel?.text = "\((index + 1)). " + SongDescriptor.titles[index]
                 nowPlayingLabel?.isHidden = false
             } catch {
             }
