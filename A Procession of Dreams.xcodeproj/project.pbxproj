@@ -86,7 +86,9 @@
 		2A7CB5D21FACDD9A0048116D /* SongModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2A7CB5CD1FACDD990048116D /* SongModel.xcdatamodeld */; };
 		2A7CB5D51FACDD9A0048116D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A7CB5D11FACDD9A0048116D /* GoogleService-Info.plist */; };
 		2A7CB5D71FACDE710048116D /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 2A7CB5D61FACDE710048116D /* Podfile */; };
-		2A7CB5DA1FAD870E0048116D /* CollectionViewHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7CB5D91FAD870E0048116D /* CollectionViewHeaderCollectionReusableView.swift */; };
+		2A7CB5DA1FAD870E0048116D /* CollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7CB5D91FAD870E0048116D /* CollectionViewHeader.swift */; };
+		2A7CB5DC1FAE25EF0048116D /* CollectionViewFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7CB5DB1FAE25EF0048116D /* CollectionViewFooter.swift */; };
+		2A7CB5E01FAE3D830048116D /* thumb_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A7CB5DF1FAE3D830048116D /* thumb_image.png */; };
 		2AFEE07C1FA55CF20075A02F /* Consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFEE07B1FA55CF20075A02F /* Consts.swift */; };
 		2AFEE0871FA6C8D20075A02F /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFEE0861FA6C8D20075A02F /* CollectionViewCell.swift */; };
 		2AFEE0891FA6D4760075A02F /* LyricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFEE0881FA6D4760075A02F /* LyricsView.swift */; };
@@ -200,7 +202,9 @@
 		2A7CB5CE1FACDD990048116D /* SongModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SongModel.xcdatamodel; sourceTree = "<group>"; };
 		2A7CB5D11FACDD9A0048116D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2A7CB5D61FACDE710048116D /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
-		2A7CB5D91FAD870E0048116D /* CollectionViewHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		2A7CB5D91FAD870E0048116D /* CollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewHeader.swift; sourceTree = "<group>"; };
+		2A7CB5DB1FAE25EF0048116D /* CollectionViewFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewFooter.swift; sourceTree = "<group>"; };
+		2A7CB5DF1FAE3D830048116D /* thumb_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumb_image.png; sourceTree = "<group>"; };
 		2AFEE07B1FA55CF20075A02F /* Consts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Consts.swift; sourceTree = "<group>"; };
 		2AFEE0861FA6C8D20075A02F /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		2AFEE0881FA6D4760075A02F /* LyricsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyricsView.swift; sourceTree = "<group>"; };
@@ -333,6 +337,7 @@
 		14B8C6671BE66E0400EAF296 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				2A7CB5DF1FAE3D830048116D /* thumb_image.png */,
 				14A626241C2F2D8400C123C6 /* apod_bg_trans.png */,
 				14EFBAA31C2904470011C7D6 /* Icon-76@x2.png */,
 				14EFBAA41C2904470011C7D6 /* Icon-76.png */,
@@ -400,7 +405,8 @@
 				2AFEE0861FA6C8D20075A02F /* CollectionViewCell.swift */,
 				14809ECF1C23CC92008D0C0B /* MyCell.swift */,
 				145AE35C1C225F5F008BEDFE /* CarouselViewController.swift */,
-				2A7CB5D91FAD870E0048116D /* CollectionViewHeaderCollectionReusableView.swift */,
+				2A7CB5D91FAD870E0048116D /* CollectionViewHeader.swift */,
+				2A7CB5DB1FAE25EF0048116D /* CollectionViewFooter.swift */,
 			);
 			path = collection;
 			sourceTree = "<group>";
@@ -560,6 +566,7 @@
 				143E1FC21C271329005BCF0C /* ron_townpump1988_med.jpg in Resources */,
 				14B8C6061BE66DF300EAF296 /* apod_cover_ico.png in Resources */,
 				2A7CB5D71FACDE710048116D /* Podfile in Resources */,
+				2A7CB5E01FAE3D830048116D /* thumb_image.png in Resources */,
 				14C273001BF87227001DF1F7 /* coda.mp3 in Resources */,
 				1487AB531C06D36300422602 /* song3.txt in Resources */,
 				14B8C6621BE66DF300EAF296 /* tree.png in Resources */,
@@ -775,7 +782,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A7CB5DA1FAD870E0048116D /* CollectionViewHeaderCollectionReusableView.swift in Sources */,
+				2A7CB5DA1FAD870E0048116D /* CollectionViewHeader.swift in Sources */,
 				2A7CB5D21FACDD9A0048116D /* SongModel.xcdatamodeld in Sources */,
 				145AE35D1C225F5F008BEDFE /* CarouselViewController.swift in Sources */,
 				145507391C1E42FB007D6384 /* UrlLinksDescriptor.swift in Sources */,
@@ -786,6 +793,7 @@
 				14809ED01C23CC92008D0C0B /* MyCell.swift in Sources */,
 				143E1FA61C25D271005BCF0C /* ImageDescriptor.swift in Sources */,
 				14508D6F1BDF121C00EED7C3 /* SongContentViewController.swift in Sources */,
+				2A7CB5DC1FAE25EF0048116D /* CollectionViewFooter.swift in Sources */,
 				141EAD1A1C0D663800029CAA /* TimerUtil.swift in Sources */,
 				2AFEE07C1FA55CF20075A02F /* Consts.swift in Sources */,
 				1476533D1BC1C21200280D36 /* AppDelegate.swift in Sources */,

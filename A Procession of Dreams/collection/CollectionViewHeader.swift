@@ -8,8 +8,7 @@
 
 import UIKit
 
-class CollectionViewHeaderCollectionReusableView: UICollectionReusableView {
+class CollectionViewHeader: UICollectionReusableView {
     
-    
-        
+    @IBOutlet weak var dismissButton: UIButton!
 }

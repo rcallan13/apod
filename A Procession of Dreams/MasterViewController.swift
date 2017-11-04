@@ -99,12 +99,13 @@ class MasterViewController: UIViewController, UIPageViewControllerDataSource, MF
         self.pageViewController?.didMove(toParentViewController: self)
         
         
-        slider = UISlider(frame: CGRect.make(playbackView.frame.width/6, playbackView.frame.height/4 + MARGIN, 2 * playbackView.frame.width/3, BUTTON_SIZE))
+        slider = UISlider(frame: CGRect.make(playbackView.frame.width/6, playbackView.frame.height/4, 2 * playbackView.frame.width/3, BUTTON_SIZE))
         slider?.addTarget(self, action: #selector(MasterViewController.songProgressChanged(sender:)), for: .valueChanged)
         slider?.minimumValue = 0
         slider?.maximumValue = 100
         slider?.minimumTrackTintColor = UIColor.darkGray
-        slider?.thumbTintColor = thumbColor
+        let thumbImage = UIImage(named: "thumb_image.png")
+        slider?.setThumbImage(thumbImage, for: .normal)
         playbackView.addSubview(slider!)
         playbackViewRect = playbackView.bounds
         layoutPlayback()
@@ -413,14 +414,15 @@ class MasterViewController: UIViewController, UIPageViewControllerDataSource, MF
     
     private func layoutPlayback() {
         
-        playButton = UIButton(frame: CGRect.make((slider?.frame.midX)! + MARGIN, playbackView.frame.height - MARGIN - BUTTON_SIZE, BUTTON_SIZE, BUTTON_SIZE))
+        let offset = 3 * MARGIN/2
+        playButton = UIButton(frame: CGRect.make((slider?.frame.midX)! + MARGIN, playbackView.frame.height - offset - BUTTON_SIZE, BUTTON_SIZE, BUTTON_SIZE))
         NSLog("Height BUTTON: \((self.playButton?.frame.origin.y)!)")
         let image = UIImage(named: "play.png")
         playButton?.setBackgroundImage(image, for: .normal)
         playButton?.addTarget(self, action: #selector(onPlay(_:)), for: .touchUpInside)
         playbackView.addSubview(playButton!)
         
-        stopButton = UIButton(frame: CGRect.make((slider?.frame.midX)! - MARGIN - BUTTON_SIZE, playbackView.frame.height - MARGIN - BUTTON_SIZE, BUTTON_SIZE, BUTTON_SIZE))
+        stopButton = UIButton(frame: CGRect.make((slider?.frame.midX)! - MARGIN - BUTTON_SIZE, playbackView.frame.height - offset - BUTTON_SIZE, BUTTON_SIZE, BUTTON_SIZE))
         let stopImage = UIImage(named: "stop.png")
         stopButton?.setBackgroundImage(stopImage, for: .normal)
         stopButton?.addTarget(self, action: #selector(onStop(_:)), for: .touchUpInside)
@@ -442,14 +444,11 @@ class MasterViewController: UIViewController, UIPageViewControllerDataSource, MF
         timeExpiredLabel?.isHidden = true
         playbackView.addSubview(timeExpiredLabel!)
         
-        nowPlayingLabel = UILabel(frame: CGRect.make(MARGIN, playbackView.frame.height - (MARGIN - 8), playbackView.frame.width - 2 * MARGIN, MARGIN))
-        nowPlayingLabel?.textColor = thumbColor
-        //let fd = UIFontDescriptor.preferredFontDescriptor(withTextStyle: .caption1)
-        //let emph = fd.withSymbolicTraits(.traitItalic)
-        //nowPlayingLabel?.font = UIFont(descriptor: emph!, size: 0)
-        nowPlayingLabel?.font = UIFont(name: "", size: 12)
+        nowPlayingLabel = UILabel(frame: CGRect.make(MARGIN, 0, playbackView.frame.width - 2 * MARGIN, MARGIN))
+        nowPlayingLabel?.textColor = UIColor.lightGray
+        nowPlayingLabel?.font = UIFont(name: "Chalkduster", size: 12)
         playbackView.addSubview(nowPlayingLabel!)
-        nowPlayingLabel?.textAlignment = .center
+        nowPlayingLabel?.textAlignment = .left
         nowPlayingLabel?.isHidden = true
     }
 }

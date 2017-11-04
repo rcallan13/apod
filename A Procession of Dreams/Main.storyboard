@@ -10,6 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="ChalkboardSE.ttc">
+            <string>ChalkboardSE-Regular</string>
+        </array>
         <array key="Chalkduster.ttf">
             <string>Chalkduster</string>
         </array>
@@ -132,35 +135,47 @@
                                 </connections>
                             </collectionViewCell>
                         </cells>
-                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="headerView" id="L9H-rG-BiC">
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.14999999999999999" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="headerView" id="IXm-0x-8iD" customClass="CollectionViewHeader" customModule="Corsage_APoD" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vzN-pk-kTr">
-                                    <rect key="frame" x="267" y="10" width="100" height="30"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="100" id="C7Z-NT-IbV"/>
-                                        <constraint firstAttribute="height" constant="30" id="Pib-1s-972"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="18"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rgl-rb-NKD">
+                                    <rect key="frame" x="149" y="2" width="77" height="46"/>
+                                    <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="24"/>
                                     <state key="normal" title="Dismiss">
-                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
-                                    <connections>
-                                        <action selector="onDismiss:" destination="pYI-aQ-qAB" eventType="touchUpInside" id="9MO-Up-jwP"/>
-                                    </connections>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstItem="vzN-pk-kTr" firstAttribute="trailing" secondItem="L9H-rG-BiC" secondAttribute="trailingMargin" id="H0K-Sx-qj7"/>
-                                <constraint firstItem="vzN-pk-kTr" firstAttribute="centerY" secondItem="L9H-rG-BiC" secondAttribute="centerY" id="hsj-0D-bqc"/>
+                                <constraint firstItem="Rgl-rb-NKD" firstAttribute="centerY" secondItem="IXm-0x-8iD" secondAttribute="centerY" id="Mb4-2j-YnE"/>
+                                <constraint firstItem="Rgl-rb-NKD" firstAttribute="centerX" secondItem="IXm-0x-8iD" secondAttribute="centerX" id="PJJ-8Y-m94"/>
                             </constraints>
+                            <connections>
+                                <outlet property="dismissButton" destination="Rgl-rb-NKD" id="DdO-Ac-5ww"/>
+                            </connections>
                         </collectionReusableView>
-                        <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="upP-ko-nga">
+                        <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.14999999999999999" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="footerView" id="KcN-Am-U8l" customClass="CollectionViewHeader" customModule="Corsage_APoD" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="230" width="375" height="50"/>
                             <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psP-Ty-OEv">
+                                    <rect key="frame" x="149" y="2" width="77" height="46"/>
+                                    <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="24"/>
+                                    <state key="normal" title="Dismiss">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="psP-Ty-OEv" firstAttribute="centerY" secondItem="KcN-Am-U8l" secondAttribute="centerY" id="ndC-Fd-CuZ"/>
+                                <constraint firstItem="psP-Ty-OEv" firstAttribute="centerX" secondItem="KcN-Am-U8l" secondAttribute="centerX" id="zfl-XI-KxY"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="dismissButton" destination="psP-Ty-OEv" id="gE6-Kf-RQV"/>
+                            </connections>
                         </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="pYI-aQ-qAB" id="zqd-Vd-tpv"/>
