@@ -14,6 +14,11 @@ import AVKit
 @available(iOS 8.0, *)
 class MasterViewController: UIViewController, UIPageViewControllerDataSource, MFMailComposeViewControllerDelegate, AVAudioPlayerDelegate {
     
+    class State {
+        var isPlaying: Bool = false
+        var isLyricsShowing: Bool = false
+    }
+     
     let BUTTON_SIZE: CGFloat = 38
     let MARGIN: CGFloat = 16
     
@@ -46,6 +51,7 @@ class MasterViewController: UIViewController, UIPageViewControllerDataSource, MF
     var didLayout: Bool = false
     var playbackViewRect: CGRect?
     var w: CGFloat?
+    var lyricsViewShowing: Bool = false
     
     // MARK: - lifecycle
     override func viewDidLoad() {
@@ -81,6 +87,7 @@ class MasterViewController: UIViewController, UIPageViewControllerDataSource, MF
     override func viewWillLayoutSubviews() {
         
         removeFromPlayback()
+        lyricsView?.removeFromSuperview()
         
         if self.view.frame.width > self.view.frame.height {
             layoutPlaybackLandscape()
@@ -103,7 +110,9 @@ class MasterViewController: UIViewController, UIPageViewControllerDataSource, MF
             nowPlayingLabel?.text = "\((currentPlaying + 1)). " + SongDescriptor.titles[currentPlaying]
             nowPlayingLabel?.isHidden = false
         }
-        
+        if lyricsViewShowing {
+            onLyrics(self)
+        }
     }
     
     @objc func onMore(_ sender: UIButton) {
@@ -111,13 +120,17 @@ class MasterViewController: UIViewController, UIPageViewControllerDataSource, MF
     }
     
     @objc func onLyrics(_ sender: Any) {
-        if lyricsView != nil {
+        /*
+        if lyricsViewShowing {
             onDismissLyrics(sender as AnyObject)
             return
         }
-        
+ */
+        onDismissLyrics(sender as AnyObject)
         let rect = (pageViewController?.view.frame)!
-        lyricsView = LyricsView(frame: CGRect.make(rect.origin.x, rect.origin.y, rect.width, rect.height - BUTTON_SIZE))
+        var width = rect.width
+        
+        lyricsView = LyricsView(frame: CGRect.make(rect.origin.x, rect.origin.y, width, rect.height - BUTTON_SIZE))
         lyricsView?.isHidden = true
         lyricsView?.songIndex = currentIndex
         lyricsView?.backgroundColor = UIColor.black
@@ -127,28 +140,41 @@ class MasterViewController: UIViewController, UIPageViewControllerDataSource, MF
         dismiss.titleLabel?.font = UIFont(name: "Chalkduster", size: 14)
         dismiss.addTarget(self, action: #selector(onDismissLyrics(_:)), for: .touchUpInside)
         lyricsView?.addSubview(dismiss)
-        self.view.addSubview(lyricsView!)
-        lyricsView?.contentSize = CGSize(width: self.view.frame.width - 2 * MARGIN, height: (lyricsView?.lyricsLabel?.intrinsicContentSize.height)! + 100)
+        pageViewController?.view.addSubview(lyricsView!)
+        
+        width = self.view.frame.width - 2 * MARGIN
+        if self.view.frame.width > self.view.frame.height {
+            width = width/2
+        }
+        lyricsView?.contentSize = CGSize(width: width, height: (lyricsView?.lyricsLabel?.intrinsicContentSize.height)! + 100)
         
         var transform = CGAffineTransform(translationX: -1 * (lyricsView?.frame.width)!, y: 0)
         lyricsView?.transform = transform
         lyricsView?.isHidden = false
+        self.pageViewController?.view.bringSubview(toFront: self.lyricsView!)
         
-        transform = CGAffineTransform(translationX: 0, y: 0)
-        UIView.animate(withDuration: 0.3, animations: {
-            self.lyricsView?.transform = transform
-        }, completion: {(finished: Bool) in
-            self.view.bringSubview(toFront: self.lyricsView!)
-        })
+        if self.view.frame.height > self.view.frame.width {
+            transform = CGAffineTransform(translationX: 0, y: 0)
+            UIView.animate(withDuration: 0.3, animations: {
+                self.lyricsView?.transform = transform
+            }, completion: {(finished: Bool) in
+                
+            })
+        }
+        lyricsViewShowing = true
     }
     
     @objc func onDismissLyrics(_ sender: AnyObject) {
+        guard let _ = lyricsView else {
+            return
+        }
         let transform = CGAffineTransform(translationX: -1 * (lyricsView?.frame.width)!, y: 0)
         UIView.animate(withDuration: 0.3, animations: {
             self.lyricsView?.transform = transform
         }, completion: {(finished: Bool) in
             self.lyricsView?.removeFromSuperview()
             self.lyricsView = nil
+            self.lyricsViewShowing = false
         })
     }
     
@@ -441,7 +467,7 @@ class MasterViewController: UIViewController, UIPageViewControllerDataSource, MF
         playbackViewRect = playbackView?.bounds
         
         playButton = UIButton(frame: CGRect.make((slider?.frame.midX)! + MARGIN, playButtonY, BUTTON_SIZE, BUTTON_SIZE))
-        NSLog("Height BUTTON: \((self.playButton?.frame.origin.y)!)")
+
         let image = UIImage(named: "play.png")
         playButton?.setBackgroundImage(image, for: .normal)
         playButton?.addTarget(self, action: #selector(onPlay(_:)), for: .touchUpInside)
@@ -515,7 +541,7 @@ class MasterViewController: UIViewController, UIPageViewControllerDataSource, MF
         
         let offset = 3 * MARGIN/2
         playButton = UIButton(frame: CGRect.make((slider?.frame.midX)! + MARGIN, (playbackView?.frame.height)! - offset - BUTTON_SIZE, BUTTON_SIZE, BUTTON_SIZE))
-        NSLog("Height BUTTON: \((self.playButton?.frame.origin.y)!)")
+        
         let image = UIImage(named: "play.png")
         playButton?.setBackgroundImage(image, for: .normal)
         playButton?.addTarget(self, action: #selector(onPlay(_:)), for: .touchUpInside)
