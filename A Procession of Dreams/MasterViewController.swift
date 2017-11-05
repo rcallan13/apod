@@ -17,48 +17,50 @@ class MasterViewController: UIViewController, UIPageViewControllerDataSource, MF
     class State {
         var isPlaying: Bool = false
         var isLyricsShowing: Bool = false
+        var isAutoPlay: Bool = false
+        var isPaused: Bool = false
+        var lyricsViewShowing: Bool = false
+        var currentSong: Int = 0
+        var currentIndex: Int = 0
+        var lastVal: Float = 0
     }
-     
+    
+    static var STATE = State()
+    static var pageImages = ["arm_image_white", "leg_image_white", "head_image_white", "top_half_white", "full_body_white2"]
+    
+    static var songLength = ["05:18", "04:09", "05:33", "02:34", "02:01"]
+    
     let BUTTON_SIZE: CGFloat = 38
     let MARGIN: CGFloat = 16
+    let inc = 2.0
     
+    var audioPlayer: AVAudioPlayer!
     var playbackView: UIView?
-    
     var timeRemainingLabel: UILabel?
     var timeExpiredLabel: UILabel?
     var nowPlayingLabel: UILabel?
     var slider: UISlider?
     var playButton: UIButton?
     var stopButton: UIButton?
-    let inc = 2.0
-    var isPaused = false
-    var audioPlayer: AVAudioPlayer!
+    
     var lyricsButton: UIButton?
     var moreButton: UIButton?
     var currentPlaying: Int = 0
-    var pageImages: NSArray!
-    static var currentSong: Int = 0
-    static var currentSongLocation: Int = 0
-    var isAutoPlay: Bool = false
-    var currentIndex: Int = 0
-    var displayLink: CADisplayLink!
-    var timerUtil: TimerUtil!
-    var lastVal: Float = 0
+
+    var displayLink: CADisplayLink?
+    var timerUtil: TimerUtil?
+    
     var lyricsView: LyricsView?
-    var songLength: NSArray!
     var imageView: UIImageView?
     var pageViewController: UIPageViewController?
-    var didLayout: Bool = false
+    
     var playbackViewRect: CGRect?
     var w: CGFloat?
-    var lyricsViewShowing: Bool = false
     
     // MARK: - lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        didLayout = false
-        
+  
         SongDescriptor.initLyrics()
         switch UIDevice.current.userInterfaceIdiom {
         case .phone:
@@ -68,9 +70,6 @@ class MasterViewController: UIViewController, UIPageViewControllerDataSource, MF
         default:
             self.view.backgroundColor = UIColor(patternImage: UIImage(named: "apod_bg.png")!)
         }
-        self.pageImages = NSArray(objects: "arm_image_white", "leg_image_white", "head_image_white", "top_half_white", "full_body_white2")
-        
-        self.songLength = NSArray(objects: "05:18", "04:09", "05:33", "02:34", "02:01")
         
         self.pageViewController = self.storyboard?.instantiateViewController(withIdentifier: "PageViewController") as? UIPageViewController
         self.pageViewController?.dataSource = self
@@ -80,8 +79,9 @@ class MasterViewController: UIViewController, UIPageViewControllerDataSource, MF
         
         self.pageViewController?.setViewControllers(viewControllers as? [UIViewController], direction: .forward, animated: true, completion: nil)
         
-        currentIndex = 0
+        MasterViewController.STATE.currentIndex = 0
         timerUtil = TimerUtil()
+        
     }
     
     override func viewWillLayoutSubviews() {
@@ -104,13 +104,16 @@ class MasterViewController: UIViewController, UIPageViewControllerDataSource, MF
         self.view.addSubview((self.pageViewController?.view)!)
         self.pageViewController?.didMove(toParentViewController: self)
         self.view.addSubview(playbackView!)
-        if audioPlayer != nil && audioPlayer.isPlaying {
-            timeExpiredLabel?.isHidden = false
-            timeRemainingLabel?.isHidden = false
-            nowPlayingLabel?.text = "\((currentPlaying + 1)). " + SongDescriptor.titles[currentPlaying]
-            nowPlayingLabel?.isHidden = false
+        if let _ = audioPlayer {
+            if audioPlayer.isPlaying {
+                timeExpiredLabel?.isHidden = false
+                timeRemainingLabel?.isHidden = false
+                nowPlayingLabel?.text = "\((currentPlaying + 1)). " + SongDescriptor.titles[currentPlaying]
+                nowPlayingLabel?.isHidden = false
+            }
         }
-        if lyricsViewShowing {
+        
+        if MasterViewController.STATE.lyricsViewShowing {
             onLyrics(self)
         }
     }
@@ -132,7 +135,7 @@ class MasterViewController: UIViewController, UIPageViewControllerDataSource, MF
         
         lyricsView = LyricsView(frame: CGRect.make(rect.origin.x, rect.origin.y, width, rect.height - BUTTON_SIZE))
         lyricsView?.isHidden = true
-        lyricsView?.songIndex = currentIndex
+        lyricsView?.songIndex = MasterViewController.STATE.currentIndex
         lyricsView?.backgroundColor = UIColor.black
         let dismiss = UIButton(frame: CGRect.make(((lyricsView?.frame.width)!) - 2 * BUTTON_SIZE, 0, 2 * BUTTON_SIZE, BUTTON_SIZE))
         dismiss.setTitle("Dismiss", for: .normal)
@@ -161,7 +164,7 @@ class MasterViewController: UIViewController, UIPageViewControllerDataSource, MF
                 
             })
         }
-        lyricsViewShowing = true
+        MasterViewController.STATE.lyricsViewShowing = true
     }
     
     @objc func onDismissLyrics(_ sender: AnyObject) {
@@ -174,51 +177,53 @@ class MasterViewController: UIViewController, UIPageViewControllerDataSource, MF
         }, completion: {(finished: Bool) in
             self.lyricsView?.removeFromSuperview()
             self.lyricsView = nil
-            self.lyricsViewShowing = false
+            MasterViewController.STATE.lyricsViewShowing = false
         })
     }
     
     @objc func onPlay(_ sender: AnyObject) {
+        
         if audioPlayer != nil {
             if audioPlayer.isPlaying {
                 audioPlayer.pause()
-                isPaused = true
+                MasterViewController.STATE.isPaused = true
                 playButton?.setImage(UIImage(named: "play.png"), for: .normal)
                 return
             }
-            if  isPaused {
+            
+            if  MasterViewController.STATE.isPaused {
                 audioPlayer.play()
-                displayLink = CADisplayLink(target: self, selector: #selector(updateSliderProgress))
-                displayLink.add(to: RunLoop.current, forMode: RunLoopMode.defaultRunLoopMode)
+                displayLink = CADisplayLink(target: self, selector: #selector(self.updateSliderProgress))
+                displayLink?.add(to: RunLoop.current, forMode: RunLoopMode.defaultRunLoopMode)
                 if audioPlayer.isPlaying {
-                    isPaused = false
+                    MasterViewController.STATE.isPaused = false
                     playButton?.setImage(UIImage(named: "pause.png"), for: .normal)
                 }
                 return
             }
         }
-        playSong(getIndexForPage())
+        // finally, play the song
+        playSong(MasterViewController.STATE.currentSong)
     }
     
     private func playSong(_ index: Int) {
-        
         if let url = Bundle.main.url(forResource: SongDescriptor.getSongAtIndex(index: index), withExtension: "mp3") {
             do {
                 timeRemainingLabel!.isHidden = false
                 timeExpiredLabel!.isHidden = false
-                timeRemainingLabel!.text = songLength[index] as? String
+                timeRemainingLabel!.text = MasterViewController.songLength[index]
                 timeExpiredLabel!.text = "00:00"
                 
                 let sound = try AVAudioPlayer(contentsOf: url)
                 audioPlayer = sound
                 audioPlayer.prepareToPlay()
                 audioPlayer.delegate = self
-                timerUtil.duration = audioPlayer.duration
+                timerUtil?.duration = audioPlayer.duration
                 audioPlayer.play()
                 displayLink = CADisplayLink(target: self, selector: #selector(updateSliderProgress))
-                displayLink.add(to: RunLoop.current, forMode: RunLoopMode.defaultRunLoopMode)
+                displayLink?.add(to: RunLoop.current, forMode: RunLoopMode.defaultRunLoopMode)
                 if audioPlayer.isPlaying {
-                    isPaused = false
+                    MasterViewController.STATE.isPaused = false
                     playButton?.setImage(UIImage(named: "pause.png"), for: .normal)
                 }
             
@@ -241,63 +246,68 @@ class MasterViewController: UIViewController, UIPageViewControllerDataSource, MF
     }
     
     @objc func songProgressChanged(sender: UISlider) {
+        guard let _ = audioPlayer else {
+            return
+        }
         let val = sender.value
-        if audioPlayer != nil && audioPlayer.isPlaying {
-            let delta = lastVal - val
+        if audioPlayer.isPlaying {
+            let delta = MasterViewController.STATE.lastVal - val
             if delta > 0.0 {
                 audioPlayer.currentTime -= inc
             } else {
                 audioPlayer.currentTime += inc
             }
-            lastVal = val
+            MasterViewController.STATE.lastVal = val
             updateSliderProgress()
         }
     }
     
     // stop the playback
     @objc func onStop(_ sender: AnyObject) {
-        if audioPlayer != nil {
-            audioPlayer.currentTime = 0
-            audioPlayer.stop()
-            slider?.value = 0
-            songProgressChanged(sender: slider!)
-            timeRemainingLabel?.isHidden = true
-            timeExpiredLabel?.isHidden = true
-            nowPlayingLabel?.isHidden = true
-            isPaused = false
-            playButton?.setImage(UIImage(named: "play.png"), for: .normal)
+        guard let _ = audioPlayer else {
+            return
         }
+        
+        audioPlayer.currentTime = 0
+        audioPlayer.stop()
+        slider?.value = 0
+        songProgressChanged(sender: slider!)
+        timeRemainingLabel?.isHidden = true
+        timeExpiredLabel?.isHidden = true
+        nowPlayingLabel?.isHidden = true
+        MasterViewController.STATE.isPaused = false
+        playButton?.setImage(UIImage(named: "play.png"), for: .normal)
     }
     
     @objc func updateSliderProgress() {
         if timerUtil != nil && audioPlayer != nil {
-            let deltaRem = toInt(rem: timerUtil.duration - audioPlayer.currentTime)
-            let remTime = timerUtil.getFormattedTime(seconds: deltaRem)
+            let deltaRem = Int((timerUtil?.duration)! - audioPlayer.currentTime)
+            let remTime = timerUtil?.getFormattedTime(seconds: deltaRem)
             timeRemainingLabel?.text = remTime
             
-            let deltaExp = toInt(rem: audioPlayer.currentTime)
-            let expTime = timerUtil.getFormattedTime(seconds: deltaExp)
+            let deltaExp = Int(audioPlayer.currentTime)
+            let expTime = timerUtil?.getFormattedTime(seconds: deltaExp)
             timeExpiredLabel!.text = expTime
             
-            let progress = timerUtil.getTimeAsFloat(expired: audioPlayer.currentTime)
-            slider?.setValue(progress, animated: false)
+            let progress = timerUtil?.getTimeAsFloat(expired: audioPlayer.currentTime)
+            slider?.setValue(progress!, animated: false)
         }
     }
     
     func playNextSong() {
-        if MasterViewController.currentSong < (SongDescriptor.getNumSongs() - 1) {
-            MasterViewController.currentSong = MasterViewController.currentSong + 1;
-            isAutoPlay = true
-            playSong(MasterViewController.currentSong)
+        if MasterViewController.STATE.currentSong < (SongDescriptor.getNumSongs() - 1) {
+            MasterViewController.STATE.currentSong = MasterViewController.STATE.currentSong + 1;
+            MasterViewController.STATE.isAutoPlay = true
+            playSong(MasterViewController.STATE.currentSong)
         } else {
-            MasterViewController.currentSong = 0
-            isAutoPlay = false
+            MasterViewController.STATE.currentSong = 0
+            MasterViewController.STATE.isAutoPlay = false
         }
     }
     
     func viewControllerAtIndex(index: Int) -> SongContentViewController {
         if let vc: SongContentViewController = self.storyboard?.instantiateViewController(withIdentifier: "ContentViewController") as? SongContentViewController {
-            vc.pageImage = self.pageImages[index] as! String
+            vc.pageImage = MasterViewController.pageImages[index]
             vc.pageTitle = SongDescriptor.titles[index]
             vc.pageIndex = index
             return vc
@@ -310,7 +320,7 @@ class MasterViewController: UIViewController, UIPageViewControllerDataSource, MF
         
         let vc = viewController as! SongContentViewController
         var index = vc.pageIndex as Int
-        currentIndex = index
+        MasterViewController.STATE.currentIndex = index
         if (index == 0 || index == NSNotFound) {
             return nil
         }
@@ -323,7 +333,7 @@ class MasterViewController: UIViewController, UIPageViewControllerDataSource, MF
         
         let vc = viewController as! SongContentViewController
         var index = vc.pageIndex as Int
-        currentIndex = index
+        MasterViewController.STATE.currentIndex = index
         if (index == NSNotFound) {
             return nil
         }
@@ -341,7 +351,7 @@ class MasterViewController: UIViewController, UIPageViewControllerDataSource, MF
     }
     
     func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
-        return currentIndex
+        return MasterViewController.STATE.currentIndex
     }
     
     func openPage(action: UIAlertAction!, urlString: String) {
@@ -427,10 +437,6 @@ class MasterViewController: UIViewController, UIPageViewControllerDataSource, MF
     private func toInt(rem: Double) -> Int {
         let delta:Int = Int(rem)
         return delta
-    }
-    
-    private func getIndexForPage() -> Int {
-        return currentIndex
     }
     
     private func removeFromPlayback() {
