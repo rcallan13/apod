@@ -105,15 +105,37 @@ class CarouselViewController: UICollectionViewController {
         overlayImageView.layer.shadowOffset = CGSize(width: 10, height: 10)
         overlayImageView.layer.shadowColor = UIColor.darkGray.cgColor
         overlayImageView.setBackgroundImage(image, for: .normal)
+        
         self.view.addSubview(overlayImageView)
         self.view.bringSubview(toFront: overlayImageView)
         overlayImageView.addTarget(self, action: #selector(onImageTapped(_:)), for: .touchUpInside)
-        collectionView.alpha = 0.85
+        
+        
+        overlayImageView.isHidden = true
+        var scale = CGAffineTransform(scaleX: 0, y: 0)
+        overlayImageView.transform = scale
+        overlayImageView.isHidden = false
+        scale = CGAffineTransform(scaleX: 1, y: 1)
+        UIView.animate(withDuration: 0.3, animations: {
+            collectionView.alpha = 0.85
+            overlayImageView.transform = scale
+        })
     }
     
     @objc func onImageTapped(_ sender: UIImageView) {
+        /*
+        let scale = CGAffineTransform(scaleX: 0, y: 0)
+        UIView.animate(withDuration: 0.8, animations: {
+            self.collectionView?.alpha = 1
+            sender.transform = scale
+        }, completion: {(finished: Bool) in
+            
+        })
+ */
         sender.removeFromSuperview()
-        collectionView?.alpha = 1
+        self.collectionView?.alpha = 1
+        
+        
     }
    
     override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
