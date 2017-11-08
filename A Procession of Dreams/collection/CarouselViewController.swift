@@ -123,7 +123,6 @@ class CarouselViewController: UICollectionViewController {
     }
     
     @objc func onImageTapped(_ sender: UIImageView) {
-        /*
         let scale = CGAffineTransform(scaleX: 0, y: 0)
         UIView.animate(withDuration: 0.8, animations: {
             self.collectionView?.alpha = 1
@@ -131,11 +130,6 @@ class CarouselViewController: UICollectionViewController {
         }, completion: {(finished: Bool) in
             
         })
- */
-        sender.removeFromSuperview()
-        self.collectionView?.alpha = 1
-        
-        
     }
    
     override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
