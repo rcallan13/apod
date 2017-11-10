@@ -525,6 +525,7 @@
 					};
 					1476534C1BC1C21200280D36 = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = C98XPK248W;
 						TestTargetID = 147653381BC1C21200280D36;
 					};
 					147653571BC1C21200280D36 = {
@@ -946,7 +947,7 @@
 				SWIFT_DISABLE_SAFETY_CHECKS = NO;
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_SUPPRESS_WARNINGS = NO;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -966,7 +967,7 @@
 				SWIFT_DISABLE_SAFETY_CHECKS = NO;
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_SUPPRESS_WARNINGS = NO;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -976,6 +977,7 @@
 			baseConfigurationReference = 89EF7ED77BE033FE65A12A4C /* Pods-A Procession of DreamsTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = C98XPK248W;
 				INFOPLIST_FILE = "A Procession of DreamsTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rcal.corsage.A-Procession-of-DreamsTests";
@@ -990,6 +992,7 @@
 			baseConfigurationReference = 1C704F04F1C14C8F46F34049 /* Pods-A Procession of DreamsTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = C98XPK248W;
 				INFOPLIST_FILE = "A Procession of DreamsTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rcal.corsage.A-Procession-of-DreamsTests";
