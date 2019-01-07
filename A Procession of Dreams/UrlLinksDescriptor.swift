@@ -31,10 +31,10 @@ class UrlLinksDescriptor {
             "Review - 2002")
         
         self.urls = NSArray(objects:
-            "http://www.bandmine.com/smithcorsage",
+            "https://www.bandmine.com/smithcorsage",
             CONTACT_CORSAGE,
             "",
-            "http://www.citr.ca/discorder/jancember-2014-2015/corsage/",
+            "https://www.citr.ca/discorder/jancember-2014-2015/corsage/",
             "https://www.youtube.com/watch?v=cNpHStLkUmQcorsage/",
             "https://www.youtube.com/watch?v=ev6w1eMByio&list=PL17BE4629C6398852&index=6",
             "https://www.youtube.com/watch?v=bZCXUoBAPiU&list=PL17BE4629C6398852&index=19",
